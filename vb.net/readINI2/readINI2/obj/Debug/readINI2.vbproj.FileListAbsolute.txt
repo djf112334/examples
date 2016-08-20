@@ -1,0 +1,11 @@
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\readINI2\readINI2\bin\Debug\readINI2.exe.config
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\readINI2\readINI2\bin\Debug\readINI2.exe
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\readINI2\readINI2\bin\Debug\readINI2.pdb
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\readINI2\readINI2\bin\Debug\readINI2.xml
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\readINI2\readINI2\obj\Debug\readINI2.vbprojResolveAssemblyReference.cache
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\readINI2\readINI2\obj\Debug\readINI2.Form1.resources
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\readINI2\readINI2\obj\Debug\readINI2.Resources.resources
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\readINI2\readINI2\obj\Debug\readINI2.vbproj.GenerateResource.Cache
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\readINI2\readINI2\obj\Debug\readINI2.exe
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\readINI2\readINI2\obj\Debug\readINI2.xml
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\readINI2\readINI2\obj\Debug\readINI2.pdb
