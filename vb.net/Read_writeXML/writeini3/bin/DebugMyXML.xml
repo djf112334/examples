@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!--XML settings.-->
-<configs>
-  <tab_1>
-    <FirstName>2</FirstName>
-    <LastName>3</LastName>
-    <tel>4</tel>
-  </tab_1>
-</configs>
