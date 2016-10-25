@@ -1,0 +1,11 @@
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\writeini3\writeini3\bin\Debug\writeini3.exe.config
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\writeini3\writeini3\bin\Debug\writeini3.exe
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\writeini3\writeini3\bin\Debug\writeini3.pdb
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\writeini3\writeini3\bin\Debug\writeini3.xml
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\writeini3\writeini3\obj\Debug\writeini3.vbprojResolveAssemblyReference.cache
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\writeini3\writeini3\obj\Debug\writeini3.Form1.resources
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\writeini3\writeini3\obj\Debug\writeini3.Resources.resources
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\writeini3\writeini3\obj\Debug\writeini3.vbproj.GenerateResource.Cache
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\writeini3\writeini3\obj\Debug\writeini3.exe
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\writeini3\writeini3\obj\Debug\writeini3.xml
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\writeini3\writeini3\obj\Debug\writeini3.pdb
