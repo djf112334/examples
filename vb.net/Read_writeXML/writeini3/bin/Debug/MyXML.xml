@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--XML settings.-->
+<configs>
+  <tab_1>
+    <FirstName>434123</FirstName>
+    <LastName>442344</LastName>
+    <tel>44421</tel>
+  </tab_1>
+</configs>

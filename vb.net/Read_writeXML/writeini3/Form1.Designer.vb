@@ -27,11 +27,14 @@ Partial Class Form1
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(29, 90)
+        Me.Button3.Location = New System.Drawing.Point(23, 123)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 2
@@ -40,44 +43,68 @@ Partial Class Form1
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(31, 38)
+        Me.TextBox1.Location = New System.Drawing.Point(365, 48)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(180, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(129, 20)
         Me.TextBox1.TabIndex = 4
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(31, 12)
+        Me.TextBox2.Location = New System.Drawing.Point(365, 22)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(180, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(129, 20)
         Me.TextBox2.TabIndex = 4
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(110, 90)
+        Me.Button5.Location = New System.Drawing.Point(395, 100)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(75, 23)
+        Me.Button5.Size = New System.Drawing.Size(90, 23)
         Me.Button5.TabIndex = 5
         Me.Button5.Text = "read"
         Me.Button5.UseVisualStyleBackColor = True
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(31, 64)
+        Me.TextBox3.Location = New System.Drawing.Point(365, 74)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(180, 20)
+        Me.TextBox3.Size = New System.Drawing.Size(129, 20)
         Me.TextBox3.TabIndex = 6
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(12, 22)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox4.TabIndex = 7
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(12, 48)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox5.TabIndex = 8
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(12, 74)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox6.TabIndex = 9
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(819, 479)
+        Me.ClientSize = New System.Drawing.Size(540, 167)
+        Me.Controls.Add(Me.TextBox6)
+        Me.Controls.Add(Me.TextBox5)
+        Me.Controls.Add(Me.TextBox4)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Button3)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
@@ -103,4 +130,7 @@ Partial Class Form1
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Button5 As Button
     Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents TextBox6 As TextBox
 End Class

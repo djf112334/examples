@@ -10,20 +10,25 @@ Public Class Form1
 
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        REM ===========================WRITE ==========================
+
         'first let's check if there is a file MyXML.xml into our application folder
         'if there wasn't a file something like that, then let's create a new one.
 
-        If IO.File.Exists("MyXML.xml") = False Then
+        Dim curdir, xmldir As String
+        curdir = My.Application.Info.DirectoryPath
+        xmldir = curdir & "\MyXML.xml"
 
-            'declare our xmlwritersettings object
-            Dim settings As New XmlWriterSettings()
+
+        'declare our xmlwritersettings object
+        Dim settings As New XmlWriterSettings()
 
             'lets tell to our xmlwritersettings that it must use indention for our xml
             settings.Indent = True
 
             'lets create the MyXML.xml document, the first parameter was the Path/filename of xml file
             ' the second parameter was our xml settings
-            Dim XmlWrt As XmlWriter = XmlWriter.Create("o:\MyXML.xml", settings)
+            Dim XmlWrt As XmlWriter = XmlWriter.Create(curdir & "\MyXML.xml", settings)
 
             With XmlWrt
 
@@ -42,17 +47,17 @@ Public Class Form1
                 ' The person nodes.
 
                 .WriteStartElement("FirstName")
-                .WriteString("akbar")
+                REM .WriteString("akbar")
+                .WriteString(TextBox4.Text)
                 .WriteEndElement()
 
                 .WriteStartElement("LastName")
-                .WriteString("alizadeh")
+                .WriteString(TextBox5.Text)
                 .WriteEndElement()
 
                 .WriteStartElement("tel")
-                .WriteString("23589963")
+                .WriteString(TextBox6.Text)
                 .WriteEndElement()
-
 
                 ' The end of this person.
                 .WriteEndElement()
@@ -64,17 +69,23 @@ Public Class Form1
             End With
 
             MessageBox.Show("XML file saved.")
-        End If
+
+
+
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
 
         'check if file myxml.xml is existing
-        If (IO.File.Exists("o:\MyXML.xml")) Then
+        Dim curdir, xmldir As String
+        curdir = My.Application.Info.DirectoryPath
+        xmldir = curdir & "\MyXML.xml"
+
+        If (IO.File.Exists(xmldir)) Then
 
             'create a new xmltextreader object
             'this is the object that we will loop and will be used to read the xml file
-            Dim document As XmlReader = New XmlTextReader("o:\MyXML.xml")
+            Dim document As XmlReader = New XmlTextReader(curdir & "\MyXML.xml")
 
             'loop through the xml file
             While (document.Read())
@@ -106,6 +117,7 @@ Public Class Form1
                 End If
 
             End While
+            document.Close()
 
         Else
 
