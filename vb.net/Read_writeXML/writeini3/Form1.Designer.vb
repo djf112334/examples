@@ -31,7 +31,7 @@ Partial Class Form1
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(22, 45)
+        Me.Button3.Location = New System.Drawing.Point(29, 90)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 2
@@ -40,21 +40,21 @@ Partial Class Form1
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(314, 48)
+        Me.TextBox1.Location = New System.Drawing.Point(31, 38)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(180, 20)
         Me.TextBox1.TabIndex = 4
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(314, 22)
+        Me.TextBox2.Location = New System.Drawing.Point(31, 12)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(180, 20)
         Me.TextBox2.TabIndex = 4
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(365, 100)
+        Me.Button5.Location = New System.Drawing.Point(110, 90)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 23)
         Me.Button5.TabIndex = 5
@@ -63,7 +63,7 @@ Partial Class Form1
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(314, 74)
+        Me.TextBox3.Location = New System.Drawing.Point(31, 64)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(180, 20)
         Me.TextBox3.TabIndex = 6
@@ -72,12 +72,12 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(540, 167)
+        Me.ClientSize = New System.Drawing.Size(819, 479)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.TextBox1)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)

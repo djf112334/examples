@@ -9,3 +9,14 @@ c:\users\bagherzadeh\documents\visual studio 2015\Projects\writeini3\writeini3\o
 c:\users\bagherzadeh\documents\visual studio 2015\Projects\writeini3\writeini3\obj\Debug\writeini3.exe
 c:\users\bagherzadeh\documents\visual studio 2015\Projects\writeini3\writeini3\obj\Debug\writeini3.xml
 c:\users\bagherzadeh\documents\visual studio 2015\Projects\writeini3\writeini3\obj\Debug\writeini3.pdb
+o:\MY GIT\examples\vb.net\Read_writeXML\writeini3\obj\Debug\writeini3.vbprojResolveAssemblyReference.cache
+o:\MY GIT\examples\vb.net\Read_writeXML\writeini3\obj\Debug\writeini3.vbproj.GenerateResource.Cache
+o:\MY GIT\examples\vb.net\Read_writeXML\writeini3\bin\Debug\readwriteXML.exe.config
+o:\MY GIT\examples\vb.net\Read_writeXML\writeini3\bin\Debug\readwriteXML.exe
+o:\MY GIT\examples\vb.net\Read_writeXML\writeini3\bin\Debug\readwriteXML.pdb
+o:\MY GIT\examples\vb.net\Read_writeXML\writeini3\bin\Debug\readwriteXML.xml
+o:\MY GIT\examples\vb.net\Read_writeXML\writeini3\obj\Debug\readwriteXML.Form1.resources
+o:\MY GIT\examples\vb.net\Read_writeXML\writeini3\obj\Debug\readwriteXML.Resources.resources
+o:\MY GIT\examples\vb.net\Read_writeXML\writeini3\obj\Debug\readwriteXML.exe
+o:\MY GIT\examples\vb.net\Read_writeXML\writeini3\obj\Debug\readwriteXML.xml
+o:\MY GIT\examples\vb.net\Read_writeXML\writeini3\obj\Debug\readwriteXML.pdb
