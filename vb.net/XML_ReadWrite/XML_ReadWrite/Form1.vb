@@ -1,26 +1,23 @@
-﻿Imports System.Xml
+﻿
+Imports System.Xml
+
+
+
 
 Public Class Form1
+   
+    
+     Dim curdir As String =  My.Application.Info.DirectoryPath
+     Dim xmldir As String = curdir & "\MyXML.xml"
+     Dim settings As New XmlWriterSettings()
+    
+        
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         REM ===========================WRITE ==========================
+       
+     settings.Indent = True
+     Dim XmlWrt As XmlWriter = XmlWriter.Create(xmldir, settings)
 
-        'first let's check if there is a file MyXML.xml into our application folder
-        'if there wasn't a file something like that, then let's create a new one.
-
-        Dim curdir, xmldir As String
-        curdir = My.Application.Info.DirectoryPath
-        xmldir = curdir & "\MyXML.xml"
-
-
-        'declare our xmlwritersettings object
-        Dim settings As New XmlWriterSettings()
-
-        'lets tell to our xmlwritersettings that it must use indention for our xml
-        settings.Indent = True
-
-        'lets create the MyXML.xml document, the first parameter was the Path/filename of xml file
-        ' the second parameter was our xml settings
-        Dim XmlWrt As XmlWriter = XmlWriter.Create(curdir & "\MyXML.xml", settings)
 
         With XmlWrt
 
@@ -73,7 +70,7 @@ Public Class Form1
 
             'create a new xmltextreader object
             'this is the object that we will loop and will be used to read the xml file
-            Dim document As XmlReader = New XmlTextReader(curdir & "\MyXML.xml")
+            Dim document As XmlReader = New XmlTextReader(xmldir)
 
             'loop through the xml file
             While (document.Read())
@@ -112,4 +109,18 @@ Public Class Form1
             MessageBox.Show("The filename you selected was not found.")
         End If
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Form2.Show()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        MessageBox.Show(curdir)
+        
+    End Sub
+
+                         
+    
 End Class
+
+
