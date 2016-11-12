@@ -2,8 +2,8 @@
 Public Class mycl
 
    
-    shared Function tst(txx  As String )
-        MsgBox (txx)
+    shared Function tst(txt  As String ,ti As String )
+        MsgBox (txt,,ti)
          End Function
 
 
