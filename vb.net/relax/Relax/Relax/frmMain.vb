@@ -12,14 +12,26 @@ Public Class Form1
     Public mytime As String
     Public  projdir As String
       Public FileSizeUbix As String 
+    Public FileSizeClient as System.IO.FileInfo
 
 
+    Sub  tst
+    chkini
+
+      
+
+      
+
+
+
+        End 
+    End Sub
 
 
     Private Sub Main()
         
          projdir = My.Application.Info.DirectoryPath & "\"    
-
+      ' tst()
         chkini()
         '  filechk ( "vars.ini")
         'filechk ( "extract.exe")
@@ -36,7 +48,43 @@ Public Class Form1
           
             
               CreateObject("WScript.Shell").Popup("This program will copy and convert TOOSHEH TV DATA and Media to shared folder on network share path.RELAX Running at this location : " & projdir ,  3, "Welcome to RELAX",64)
-            ' msgbox (My.Computer.FileSystem.GetFileInfo("o:\vars.ini"))
+
+          
+                     
+           ''  FileSizeClient = My.Computer.FileSystem.GetFileInfo(FilePathClient & "xx.ts" ) 
+
+
+            Directory.CreateDirectory (projdir & FilePathClient )         ' create ts folder in project dir 
+            Thread.Sleep(1000)
+
+           if chkts ("ts")  = False Then            ' chk if ts folder was empty and then copy ts file from server
+                My.Computer.FileSystem.CopyDirectory(FilePathUbix  , projdir & "ts", showUI:=FileIO.UIOption.AllDialogs)
+
+            End If 
+
+          ''  FileSizeUbix = My.Computer.FileSystem.GetFileInfo(FilePathClient & "xx.ts" ) 
+
+           '' FileSizeClient = My.Computer.FileSystem.GetFileInfo(FilePathClient & "*.ts" ) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         End While
 
@@ -147,8 +195,22 @@ Public Class Form1
             End
         End If
 
+           End Function
 
 
-    End Function
+    Private function chkts (ext As string)
+
+       Dim  tspath = projdir &  FilePathClient 
+           Dim paths() As String = IO.Directory.GetFiles(tspath  , "*." & ext )
+            If paths.Length > 0 Then
+                chkts = True            '      MsgBox ("file   fond")
+
+                Else 
+                    chkts = False      '    MsgBox ("file nis")
+             end if 
+
+
+
+    End function
 
 End Class
