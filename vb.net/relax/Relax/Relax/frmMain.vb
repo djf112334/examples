@@ -56,7 +56,7 @@ Public Class Form1
 
      While mytime = startin1 Or mytime = startin2 Or mytime = startin3
           
-            
+           
                     CreateObject("WScript.Shell").Popup("This program will copy and convert TOOSHEH TV DATA and Media to shared folder on network share path.RELAX Running at this location : " & projdir ,  3, "Welcome to RELAX",64)
                     Directory.CreateDirectory (projdir & FilePathClient )         ' create ts folder in project dir 
                     Thread.Sleep(1000)
@@ -118,15 +118,20 @@ Public Class Form1
 
     End Sub
 
-  
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        me.Hide()
+    End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ContextMenuStrip1.Enabled = True
+        me.Show()
 
         While 1
-            Thread.Sleep(2000)
-
-            Main()
+         
+                   Application.DoEvents()
+                   me.Refresh 
+                   Thread.Sleep(300)
+                   Main()
 
         End While
 
@@ -150,7 +155,8 @@ Public Class Form1
         'Show in the task bar:
         Me.ShowInTaskbar = True
         'Disable the Context Menu:
-        ContextMenuStrip1.Enabled = False
+      ''  ContextMenuStrip1.Enabled = False
+        me.Show()
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
