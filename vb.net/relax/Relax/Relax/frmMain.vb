@@ -11,17 +11,17 @@ Public Class Form1
     Public mydate As String
     Public mytime As String
     Public  projdir As String
-      Public FileSizeUbix As String 
+    
     Public FileSizeClient as System.IO.FileInfo
+    Public FileSizeUbix as System.IO.FileInfo
+    Public    nofileclient  As Boolean   = False 
+
 
 
     Sub  tst
     chkini
 
-      
-
-      
-
+     
 
 
         End 
@@ -29,61 +29,88 @@ Public Class Form1
 
 
     Private Sub Main()
-        
-         projdir = My.Application.Info.DirectoryPath & "\"    
-      ' tst()
-        chkini()
-        '  filechk ( "vars.ini")
-        'filechk ( "extract.exe")
-        '	filechk ( "LisaCore.dll")
-        '	filechk ( "LisaExtractor.dll")
-        '	filechk ( "LisaExtractorApp.dll")
-        '  
-        mydate = Now.Date()
-        mytime = TimeOfDay.ToString("hh:mm")
 
-      
-           
-         While mytime <> startin1 Or mytime = startin2 Or mytime = startin3
+       
+
+      '  On Error Resume Next 
+             projdir = My.Application.Info.DirectoryPath & "\"    
+             mydate = Now.Date()
+             mytime = TimeOfDay.ToString("hh:mm")
+             chkini()
+
+        Dim pathsclient() As String = IO.Directory.GetFiles(projdir &  FilePathClient  , "*.ts" )  
+        Dim pathsubix() As String = IO.Directory.GetFiles( FilePathUbix  , "*.ts" )  
+        Dim comparets As New stuff
+        Dim desfile As String 
+        Dim cmdcommand As String 
+        Dim OpenCMD 
+
+     
+            ' check needed files tu run relax 
+            filechk ( "vars.ini")
+            filechk ( "extract.exe")
+        	filechk ( "LisaCore.dll")
+        	filechk ( "LisaExtractor.dll")
+        	filechk ( "LisaExtractorApp.dll")
+
+
+     While mytime = startin1 Or mytime = startin2 Or mytime = startin3
           
             
-              CreateObject("WScript.Shell").Popup("This program will copy and convert TOOSHEH TV DATA and Media to shared folder on network share path.RELAX Running at this location : " & projdir ,  3, "Welcome to RELAX",64)
+                    CreateObject("WScript.Shell").Popup("This program will copy and convert TOOSHEH TV DATA and Media to shared folder on network share path.RELAX Running at this location : " & projdir ,  3, "Welcome to RELAX",64)
+                    Directory.CreateDirectory (projdir & FilePathClient )         ' create ts folder in project dir 
+                    Thread.Sleep(1000)
+            
+                '  comparets.CompareFiles  ( pathsclient(0),pathsubix(0) )                'compare TS on server and client 
+            
+                        If chktsclient ("ts")=False Then
+                    'so file does noit exist  and start copy from server 
+                    MsgBox  ("nabood comi mikonam ")
+                        My.Computer.FileSystem.CopyDirectory(FilePathUbix  , projdir & "ts", showUI:=FileIO.UIOption.AllDialogs)
+                                
+                              Else 
+                            MsgBox  ("bood  rad shod  ")
+                '   FileSizeClient  = My.Computer.FileSystem.GetFileInfo(pathsclient(0) )    ' get TS file size on CLIENT 
+                'MsgBox (FileSizeClient.Length )             
+                         End If
+   
+                FileSizeUbix =  My.Computer.FileSystem.GetFileInfo(pathsubix(0) )            ' ' get TS file size on SERVER  
+                    MsgBox ("file size on server = ",,FileSizeUbix .Length )
+            
+            If chktssrv ("ts")=False Then
+       
+                    CreateObject("WScript.Shell").Popup("No .TS file found in server to copy. " ,  3, "Copy status ... ",64)
 
-          
-                     
-           ''  FileSizeClient = My.Computer.FileSystem.GetFileInfo(FilePathClient & "xx.ts" ) 
+						else
+					
+                    CreateObject("WScript.Shell").Popup("All file(s) copied to client successfully." ,  3, "Copy status ... ",64)
+
+		       end if
+
+                        desfile =   Now.Date.ToString ("yyyy-MM-dd")            ' date format like 2016-10-25
+                            cmdcommand =  projdir  & FilePathClientOut & desfile & " /ts  " &  projdir & FilePathClient
+                        '   MsgBox (cmdcommand )
+                            OpenCMD = CreateObject("wscript.shell")
+                        OpenCMD.run("cmd /k extract.exe " & cmdcommand )
+
+                        Thread.Sleep (20000)
 
 
-            Directory.CreateDirectory (projdir & FilePathClient )         ' create ts folder in project dir 
-            Thread.Sleep(1000)
+        '   Remove folders  ==============================================================================================================
+                        
+                Directory.Delete (projdir  & FilePathClientOut &desfile &  removepath1,True)
+                Directory.Delete (projdir  & FilePathClientOut &desfile &  removepath2,True)
+                Directory.Delete (projdir  & FilePathClientOut &desfile &  removepath3,True)
+                Directory.Delete (projdir  & FilePathClientOut &desfile &  removepath4,True)
+                Directory.Delete (projdir  & FilePathClientOut &desfile &  removepath5,True)
 
-           if chkts ("ts")  = False Then            ' chk if ts folder was empty and then copy ts file from server
-                My.Computer.FileSystem.CopyDirectory(FilePathUbix  , projdir & "ts", showUI:=FileIO.UIOption.AllDialogs)
+        '  Remove folders  ==============================================================================================================
+                                    Directory.Delete (projdir  & FilePathClient ,True)
 
-            End If 
+                    CreateObject("WScript.Shell").Popup(".TS file deleting ... , Operational successfully completed. " ,  3, "RELAX Inform",64)
 
-          ''  FileSizeUbix = My.Computer.FileSystem.GetFileInfo(FilePathClient & "xx.ts" ) 
-
-           '' FileSizeClient = My.Computer.FileSystem.GetFileInfo(FilePathClient & "*.ts" ) 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    mytime = TimeOfDay.ToString("hh:mm")
+           
 
 
         End While
@@ -91,8 +118,10 @@ Public Class Form1
 
     End Sub
 
+  
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ContextMenuStrip1.Enabled = False
+        ContextMenuStrip1.Enabled = True
 
         While 1
             Thread.Sleep(2000)
@@ -198,19 +227,30 @@ Public Class Form1
            End Function
 
 
-    Private function chkts (ext As string)
+    Private function chktsclient (ext As string)
 
        Dim  tspath = projdir &  FilePathClient 
            Dim paths() As String = IO.Directory.GetFiles(tspath  , "*." & ext )
             If paths.Length > 0 Then
-                chkts = True            '      MsgBox ("file   fond")
+                chktsclient = True            '      MsgBox ("file   fond")
 
                 Else 
-                    chkts = False      '    MsgBox ("file nis")
+                    chktsclient = False      '    MsgBox ("file nis")
              end if 
+            End function
 
 
+     Private function chktssrv (ext As string)
 
-    End function
+       Dim  tspath =   FilePathUbix  
+           Dim paths() As String = IO.Directory.GetFiles(tspath  , "*." & ext )
+            If paths.Length > 0 Then
+                chktssrv = True            '      MsgBox ("file   fond")
+
+                Else 
+                    chktssrv = False      '    MsgBox ("file nis")
+             end if 
+            End function
+
 
 End Class
