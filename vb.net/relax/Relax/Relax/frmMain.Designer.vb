@@ -33,30 +33,33 @@ Partial Class Form1
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1.SuspendLayout
         Me.TabControl1.SuspendLayout
-        Me.TabPage2.SuspendLayout
         Me.TabPage1.SuspendLayout
-        CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage2.SuspendLayout
         Me.TabPage3.SuspendLayout
+        CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(543, 280)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(102, 29)
+        Me.Button1.Size = New System.Drawing.Size(102, 32)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Send to Tray"
         Me.Button1.UseVisualStyleBackColor = true
@@ -119,21 +122,6 @@ Partial Class Form1
         Me.TabControl1.Size = New System.Drawing.Size(492, 261)
         Me.TabControl1.TabIndex = 9
         '
-        'TabPage2
-        '
-        Me.TabPage2.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.TabPage2.Controls.Add(Me.RadioButton2)
-        Me.TabPage2.Controls.Add(Me.RadioButton1)
-        Me.TabPage2.Controls.Add(Me.CheckBox3)
-        Me.TabPage2.Controls.Add(Me.CheckBox2)
-        Me.TabPage2.Controls.Add(Me.CheckBox1)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(484, 235)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Configs"
-        '
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
@@ -158,15 +146,72 @@ Partial Class Form1
         Me.RichTextBox1.Text = "This engine auto extract recorded TS file on UBIX Server..Config file needed to r"& _ 
     "un this program correctly."
         '
-        'PictureBox1
+        'TabPage2
         '
-        Me.PictureBox1.Image = Global.Relax.My.Resources.Resources.satellite_vista
-        Me.PictureBox1.Location = New System.Drawing.Point(6, 13)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(128, 128)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 3
-        Me.PictureBox1.TabStop = false
+        Me.TabPage2.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.TabPage2.Controls.Add(Me.RadioButton2)
+        Me.TabPage2.Controls.Add(Me.RadioButton1)
+        Me.TabPage2.Controls.Add(Me.CheckBox3)
+        Me.TabPage2.Controls.Add(Me.CheckBox2)
+        Me.TabPage2.Controls.Add(Me.CheckBox1)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(484, 235)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Configs"
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = true
+        Me.RadioButton2.Location = New System.Drawing.Point(15, 141)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(90, 17)
+        Me.RadioButton2.TabIndex = 4
+        Me.RadioButton2.TabStop = true
+        Me.RadioButton2.Text = "RadioButton2"
+        Me.RadioButton2.UseVisualStyleBackColor = true
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = true
+        Me.RadioButton1.Location = New System.Drawing.Point(15, 118)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(90, 17)
+        Me.RadioButton1.TabIndex = 3
+        Me.RadioButton1.TabStop = true
+        Me.RadioButton1.Text = "RadioButton1"
+        Me.RadioButton1.UseVisualStyleBackColor = true
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = true
+        Me.CheckBox3.Location = New System.Drawing.Point(15, 78)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(81, 17)
+        Me.CheckBox3.TabIndex = 2
+        Me.CheckBox3.Text = "CheckBox3"
+        Me.CheckBox3.UseVisualStyleBackColor = true
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = true
+        Me.CheckBox2.Location = New System.Drawing.Point(15, 56)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(81, 17)
+        Me.CheckBox2.TabIndex = 1
+        Me.CheckBox2.Text = "CheckBox2"
+        Me.CheckBox2.UseVisualStyleBackColor = true
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = true
+        Me.CheckBox1.Location = New System.Drawing.Point(15, 36)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(81, 17)
+        Me.CheckBox1.TabIndex = 0
+        Me.CheckBox1.Text = "CheckBox1"
+        Me.CheckBox1.UseVisualStyleBackColor = true
         '
         'TabPage3
         '
@@ -192,57 +237,38 @@ Partial Class Form1
         Me.RichTextBox2.Text = "Description :"&Global.Microsoft.VisualBasic.ChrW(10)&"Program developer and designer : M.A. Bagherzadeh"&Global.Microsoft.VisualBasic.ChrW(10)&"Freeware and free"& _ 
     " to copy . "&Global.Microsoft.VisualBasic.ChrW(10)&"(need UBIX Server to work) ."&Global.Microsoft.VisualBasic.ChrW(10)&"www.foxnet.ir"&Global.Microsoft.VisualBasic.ChrW(10)
         '
-        'CheckBox1
+        'PictureBox1
         '
-        Me.CheckBox1.AutoSize = true
-        Me.CheckBox1.Location = New System.Drawing.Point(15, 36)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox1.TabIndex = 0
-        Me.CheckBox1.Text = "CheckBox1"
-        Me.CheckBox1.UseVisualStyleBackColor = true
+        Me.PictureBox1.Image = Global.Relax.My.Resources.Resources.satellite_vista
+        Me.PictureBox1.Location = New System.Drawing.Point(6, 13)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(128, 128)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 3
+        Me.PictureBox1.TabStop = false
         '
-        'CheckBox2
+        'Timer1
         '
-        Me.CheckBox2.AutoSize = true
-        Me.CheckBox2.Location = New System.Drawing.Point(15, 56)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox2.TabIndex = 1
-        Me.CheckBox2.Text = "CheckBox2"
-        Me.CheckBox2.UseVisualStyleBackColor = true
+        Me.Timer1.Enabled = true
+        Me.Timer1.Interval = 1000
         '
-        'CheckBox3
+        'ProgressBar1
         '
-        Me.CheckBox3.AutoSize = true
-        Me.CheckBox3.Location = New System.Drawing.Point(15, 78)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox3.TabIndex = 2
-        Me.CheckBox3.Text = "CheckBox3"
-        Me.CheckBox3.UseVisualStyleBackColor = true
+        Me.ProgressBar1.Location = New System.Drawing.Point(154, 280)
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(370, 31)
+        Me.ProgressBar1.TabIndex = 11
         '
-        'RadioButton1
+        'Label1
         '
-        Me.RadioButton1.AutoSize = true
-        Me.RadioButton1.Location = New System.Drawing.Point(15, 118)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(90, 17)
-        Me.RadioButton1.TabIndex = 3
-        Me.RadioButton1.TabStop = true
-        Me.RadioButton1.Text = "RadioButton1"
-        Me.RadioButton1.UseVisualStyleBackColor = true
-        '
-        'RadioButton2
-        '
-        Me.RadioButton2.AutoSize = true
-        Me.RadioButton2.Location = New System.Drawing.Point(15, 141)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(90, 17)
-        Me.RadioButton2.TabIndex = 4
-        Me.RadioButton2.TabStop = true
-        Me.RadioButton2.Text = "RadioButton2"
-        Me.RadioButton2.UseVisualStyleBackColor = true
+        Me.Label1.AutoSize = true
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178,Byte))
+        Me.Label1.Location = New System.Drawing.Point(123, 288)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(16, 16)
+        Me.Label1.TabIndex = 12
+        Me.Label1.Text = "0"
         '
         'Form1
         '
@@ -250,7 +276,8 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(654, 317)
-        Me.ControlBox = false
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox1)
@@ -261,14 +288,14 @@ Partial Class Form1
         Me.MinimizeBox = false
         Me.Name = "Form1"
         Me.ShowInTaskbar = false
-        Me.Text = "Relax Automation engine"
+        Me.Text = "RELAX Engine"
         Me.ContextMenuStrip1.ResumeLayout(false)
         Me.TabControl1.ResumeLayout(false)
+        Me.TabPage1.ResumeLayout(false)
         Me.TabPage2.ResumeLayout(false)
         Me.TabPage2.PerformLayout
-        Me.TabPage1.ResumeLayout(false)
-        CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage3.ResumeLayout(false)
+        CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
         Me.PerformLayout
 
@@ -294,4 +321,7 @@ End Sub
     Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents Label1 As Label
 End Class

@@ -15,15 +15,14 @@ Public Class Form1
     Public FileSizeClient as System.IO.FileInfo
     Public FileSizeUbix as System.IO.FileInfo
     Public    nofileclient  As Boolean   = False 
+       dim co as Integer = 100
+
 
 
 
     Sub  tst
-    chkini
-
-     
-
-
+    
+        
         End 
     End Sub
 
@@ -32,27 +31,30 @@ Public Class Form1
 
        
 
-      '  On Error Resume Next 
-             projdir = My.Application.Info.DirectoryPath & "\"    
-             mydate = Now.Date()
-             mytime = TimeOfDay.ToString("hh:mm")
-             chkini()
-
-        Dim pathsclient() As String = IO.Directory.GetFiles(projdir &  FilePathClient  , "*.ts" )  
-        Dim pathsubix() As String = IO.Directory.GetFiles( FilePathUbix  , "*.ts" )  
-        Dim comparets As New stuff
-        Dim desfile As String 
-        Dim cmdcommand As String 
-        Dim OpenCMD 
-
-     
-            ' check needed files tu run relax 
+    On Error goto errpart 
+            
+         ' check needed files tu run relax 
             filechk ( "vars.ini")
             filechk ( "extract.exe")
         	filechk ( "LisaCore.dll")
         	filechk ( "LisaExtractor.dll")
         	filechk ( "LisaExtractorApp.dll")
+        	filechk ( "LisaCoreWin.dll")
+        
+             projdir = My.Application.Info.DirectoryPath & "\"   
+             mydate = Now.Date()
+             mytime = TimeOfDay.ToString("hh:mm")
+             chkini()          'get setting from INI file
+              
+     '  Dim pathsclient() As String = IO.Directory.GetFiles(projdir &  FilePathClient  , "*.ts" )  
+        Dim pathsubix() As String = IO.Directory.GetFiles( FilePathUbix  , "*.ts" )  
+      '  Dim comparets As New stuff
+        Dim desfile As String 
+        Dim cmdcommand As String 
+        Dim OpenCMD 
 
+     
+       
 
      While mytime = startin1 Or mytime = startin2 Or mytime = startin3
           
@@ -65,17 +67,18 @@ Public Class Form1
             
                         If chktsclient ("ts")=False Then
                     'so file does noit exist  and start copy from server 
-                    MsgBox  ("nabood comi mikonam ")
+                 ''   MsgBox  ("nabood comi mikonam ")
                         My.Computer.FileSystem.CopyDirectory(FilePathUbix  , projdir & "ts", showUI:=FileIO.UIOption.AllDialogs)
                                 
                               Else 
-                            MsgBox  ("bood  rad shod  ")
+                        ''    MsgBox  ("bood  rad shod  ")
                 '   FileSizeClient  = My.Computer.FileSystem.GetFileInfo(pathsclient(0) )    ' get TS file size on CLIENT 
                 'MsgBox (FileSizeClient.Length )             
                          End If
    
                 FileSizeUbix =  My.Computer.FileSystem.GetFileInfo(pathsubix(0) )            ' ' get TS file size on SERVER  
-                    MsgBox ("file size on server = ",,FileSizeUbix .Length )
+                   
+               CreateObject("WScript.Shell").Popup("file size on server = " & FileSizeUbix .Length ,  3, "File already exist  ",64)
             
             If chktssrv ("ts")=False Then
        
@@ -91,21 +94,31 @@ Public Class Form1
                             cmdcommand =  projdir  & FilePathClientOut & desfile & " /ts  " &  projdir & FilePathClient
                         '   MsgBox (cmdcommand )
                             OpenCMD = CreateObject("wscript.shell")
-                        OpenCMD.run("cmd /k extract.exe " & cmdcommand )
+                        OpenCMD.run("cmd /c extract.exe " & cmdcommand )
 
                         Thread.Sleep (20000)
 
 
-        '   Remove folders  ==============================================================================================================
-                        
-                Directory.Delete (projdir  & FilePathClientOut &desfile &  removepath1,True)
-                Directory.Delete (projdir  & FilePathClientOut &desfile &  removepath2,True)
-                Directory.Delete (projdir  & FilePathClientOut &desfile &  removepath3,True)
-                Directory.Delete (projdir  & FilePathClientOut &desfile &  removepath4,True)
-                Directory.Delete (projdir  & FilePathClientOut &desfile &  removepath5,True)
+            '   Remove folders  ==============================================================================================================
+
+                    delfile  (projdir  & FilePathClientOut &desfile &  removepath1)
+                    delfile  (projdir  & FilePathClientOut &desfile &  removepath2)
+                    delfile  (projdir  & FilePathClientOut &desfile &  removepath3)
+                    delfile  (projdir  & FilePathClientOut &desfile &  removepath4)
+                    delfile  (projdir  & FilePathClientOut &desfile &  removepath5)
+
+            
+
+                  '  Directory.Delete (projdir  & FilePathClientOut &desfile &  removepath1,True)
+                   '     Directory.Delete (projdir  & FilePathClientOut &desfile &  removepath2,True)
+                    '    Directory.Delete (projdir  & FilePathClientOut &desfile &  removepath3,True)
+                     '   Directory.Delete (projdir  & FilePathClientOut &desfile &  removepath4,True)
+                      '  Directory.Delete (projdir  & FilePathClientOut &desfile &  removepath5,True)
 
         '  Remove folders  ==============================================================================================================
-                                    Directory.Delete (projdir  & FilePathClient ,True)
+                              '      Directory.Delete (projdir  & FilePathClient ,True)
+
+                    delfile  (projdir  & FilePathClient)
 
                     CreateObject("WScript.Shell").Popup(".TS file deleting ... , Operational successfully completed. " ,  3, "RELAX Inform",64)
 
@@ -115,7 +128,22 @@ Public Class Form1
 
         End While
 
+  errpart:
 
+        If Err.Number = 76 then 
+            
+        
+                Using w As StreamWriter = File.AppendText(projdir & "relax.log")
+                stuff .  Log(ErrorToString, w)
+                End Using
+                msgbox ( ErrorToString  & " RELAX need correct path to access the TS file.Please set correct path in vars.ini.RELAX now terminate.",vbCritical ,"TS path not found")
+      end If 
+    
+        If Err.Number <> 0 then  
+            MsgBox ( Err.Number & ErrorToString )
+        End If
+        
+        
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -123,20 +151,31 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+      
         ContextMenuStrip1.Enabled = True
         me.Show()
 
-        While 1
-         
-                   Application.DoEvents()
-                   me.Refresh 
-                   Thread.Sleep(300)
-                   Main()
-
-        End While
+     
 
     End Sub
 
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+     
+        
+        
+                   Application.DoEvents()
+                   me.Refresh 
+                 '  Thread.Sleep(300)
+                   Main()
+
+          co =co -10
+        if co < 0 then
+            co=100
+       End If
+      label1.Text=co 
+      progressBar1.Value=co
+
+    End Sub
 
     Private Sub Form1_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
         'Cancel Closing:
@@ -227,9 +266,11 @@ Public Class Form1
          projdir = My.Application.Info.DirectoryPath & "\" & filename
         If File.Exists(projdir) = False Then
             MsgBox("RELAX need some files to runing correctly but  " & projdir & " not found in current dir.Please copy this file to current project dir and run it again.RELAX terminated by now.", vbCritical, "File not found")
+        
+
             End
         End If
-
+            projdir =""
            End Function
 
 
@@ -258,5 +299,21 @@ Public Class Form1
              end if 
             End function
 
+
+
+   Private  Function delfile(fname As String )
+
+        Try
+            Directory.Delete(fname, True)
+  
+            Dim directoryExists = Directory.Exists(fname)
+
+         '   MsgBox ("top-level directory exists: " & directoryExists)
+        Catch e As Exception
+        '   MsgBox("The process failed: {0}" &  e.Message)
+        End Try
+
+
+    End Function
 
 End Class

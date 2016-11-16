@@ -41,4 +41,29 @@ Public Class stuff
             End Using
         End Using
     End Function
+
+
+
+    
+    Public Shared Sub Log(logMessage As String, w As TextWriter)
+
+        w.Write("Log Entry : ")
+        w.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(), _
+            DateTime.Now.ToLongDateString())
+      '  w.WriteLine("  :")
+        w.WriteLine("  :{0}", logMessage)
+        w.WriteLine ("---------------------------------------------------------------")
+    End Sub
+
+    Public Shared Sub DumpLog(r As StreamReader)
+        Dim line As String
+        line = r.ReadLine()
+        While Not (line Is Nothing)
+            Console.WriteLine(line)
+            line = r.ReadLine()
+        End While
+    End Sub
+
+
+
 End Class
