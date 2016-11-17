@@ -7,31 +7,35 @@ Imports System.Threading              ' for sleep command
 
 Public Class Form1
     Private myIni As goini
-    Public startin1, startin2, startin3, FilePathUbix, FilePathClient, FilePathClientOut, removepath1, removepath2, removepath3, removepath4, removepath5 As String
+    Public startin1, startin2, startin3, FilePathUbix, FilePathClient, FilePathClientOut, removepath1, removepath2, removepath3, removepath4, removepath5,chktimer As String
     Public mydate As String
     Public mytime As String
     Public  projdir As String
+    Public mytimeend As String 
     
     Public FileSizeClient as System.IO.FileInfo
     Public FileSizeUbix as System.IO.FileInfo
     Public    nofileclient  As Boolean   = False 
-       dim co as Integer = 100
-
-
-
-
-    Sub  tst
     
-        
-        End 
+     Public  co as Integer= chktimer
+
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+        chkini()
+       
+
+       
+        ' Add any initialization after the InitializeComponent() call.
+
     End Sub
 
-
-    Private Sub Main()
+   Private Sub Main()
 
        
 
-    On Error goto errpart 
+   ' On Error goto errpart 
             
          ' check needed files tu run relax 
             filechk ( "vars.ini")
@@ -44,6 +48,7 @@ Public Class Form1
              projdir = My.Application.Info.DirectoryPath & "\"   
              mydate = Now.Date()
              mytime = TimeOfDay.ToString("hh:mm")
+
              chkini()          'get setting from INI file
               
      '  Dim pathsclient() As String = IO.Directory.GetFiles(projdir &  FilePathClient  , "*.ts" )  
@@ -52,13 +57,16 @@ Public Class Form1
         Dim desfile As String 
         Dim cmdcommand As String 
         Dim OpenCMD 
+         
 
-     
+
+
+        if mytime=mytimeend  then goto ex
+        If  mytime = startin1 Or mytime = startin2 Or  mytime = startin3 then 
+         
+            
        
-
-     While mytime = startin1 Or mytime = startin2 Or mytime = startin3
           
-           
                     CreateObject("WScript.Shell").Popup("This program will copy and convert TOOSHEH TV DATA and Media to shared folder on network share path.RELAX Running at this location : " & projdir ,  3, "Welcome to RELAX",64)
                     Directory.CreateDirectory (projdir & FilePathClient )         ' create ts folder in project dir 
                     Thread.Sleep(1000)
@@ -96,7 +104,7 @@ Public Class Form1
                             OpenCMD = CreateObject("wscript.shell")
                         OpenCMD.run("cmd /c extract.exe " & cmdcommand )
 
-                        Thread.Sleep (20000)
+                        Thread.Sleep (chktimer )
 
 
             '   Remove folders  ==============================================================================================================
@@ -122,11 +130,10 @@ Public Class Form1
 
                     CreateObject("WScript.Shell").Popup(".TS file deleting ... , Operational successfully completed. " ,  3, "RELAX Inform",64)
 
-                    mytime = TimeOfDay.ToString("hh:mm")
-           
+                    mytimeend = TimeOfDay.ToString("hh:mm")
 
-
-        End While
+     ex:
+                        end if 
 
   errpart:
 
@@ -151,31 +158,19 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-      
+      chkini 
         ContextMenuStrip1.Enabled = True
         me.Show()
-
-     
-
-    End Sub
-
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-     
-        
-        
-                   Application.DoEvents()
-                   me.Refresh 
-                 '  Thread.Sleep(300)
-                   Main()
-
-          co =co -10
-        if co < 0 then
-            co=100
-       End If
-      label1.Text=co 
-      progressBar1.Value=co
+      
+        While 1
+                  Application.DoEvents()
+                  me.Refresh 
+                  Thread.Sleep(300)
+                 Main()
+            end While 
 
     End Sub
+
 
     Private Sub Form1_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
         'Cancel Closing:
@@ -248,14 +243,16 @@ Public Class Form1
             removepath3 = myIni.ReadString("remove", "path3")
             removepath4 = myIni.ReadString("remove", "path4")
             removepath5 = myIni.ReadString("remove", "path5")
-
-
-
+            
             If removepath1 = "" Then removepath1 = "0"
             If removepath2 = "" Then removepath2 = "0"
             If removepath3 = "" Then removepath3 = "0"
             If removepath4 = "" Then removepath4 = "0"
             If removepath5 = "" Then removepath5 = "0"
+
+            'read timers
+            chktimer =myIni.ReadString  ("timers","chktimer")
+
 
 
         End If

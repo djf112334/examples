@@ -44,7 +44,6 @@ Partial Class Form1
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1.SuspendLayout
@@ -247,16 +246,13 @@ Partial Class Form1
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = false
         '
-        'Timer1
-        '
-        Me.Timer1.Enabled = true
-        Me.Timer1.Interval = 1000
-        '
         'ProgressBar1
         '
         Me.ProgressBar1.Location = New System.Drawing.Point(154, 280)
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(370, 31)
+        Me.ProgressBar1.Step = 1
+        Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.ProgressBar1.TabIndex = 11
         '
         'Label1
@@ -264,7 +260,7 @@ Partial Class Form1
         Me.Label1.AutoSize = true
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178,Byte))
-        Me.Label1.Location = New System.Drawing.Point(123, 288)
+        Me.Label1.Location = New System.Drawing.Point(111, 288)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(16, 16)
         Me.Label1.TabIndex = 12
@@ -321,7 +317,6 @@ End Sub
     Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents Timer1 As Timer
     Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents Label1 As Label
 End Class
