@@ -1,9 +1,5 @@
-﻿
-Imports System.IO
-Imports System.Media
+﻿Imports System.IO
 Imports System.Threading              ' for sleep command
-
-
 
 Public Class Form1
     Private myIni As goini
@@ -12,30 +8,13 @@ Public Class Form1
     Public mytime As String
     Public  projdir As String
     Public mytimeend As String 
-    
     Public FileSizeClient as System.IO.FileInfo
     Public FileSizeUbix as System.IO.FileInfo
-    Public    nofileclient  As Boolean   = False 
-    
-     Public  co as Integer= chktimer
-
-    Public Sub New()
-
-        ' This call is required by the designer.
-        InitializeComponent()
-        chkini()
-       
-
-       
-        ' Add any initialization after the InitializeComponent() call.
-
-    End Sub
-
+    Public nofileclient  As Boolean   = False 
+    Public  co as Integer= chktimer
    Private Sub Main()
-
-       
-
-   ' On Error goto errpart 
+        
+   On Error goto errpart 
             
          ' check needed files tu run relax 
             filechk ( "vars.ini")
@@ -58,15 +37,9 @@ Public Class Form1
         Dim cmdcommand As String 
         Dim OpenCMD 
          
-
-
-
         if mytime=mytimeend  then goto ex
         If  mytime = startin1 Or mytime = startin2 Or  mytime = startin3 then 
          
-            
-       
-          
                     CreateObject("WScript.Shell").Popup("This program will copy and convert TOOSHEH TV DATA and Media to shared folder on network share path.RELAX Running at this location : " & projdir ,  3, "Welcome to RELAX",64)
                     Directory.CreateDirectory (projdir & FilePathClient )         ' create ts folder in project dir 
                     Thread.Sleep(1000)
@@ -86,15 +59,15 @@ Public Class Form1
    
                 FileSizeUbix =  My.Computer.FileSystem.GetFileInfo(pathsubix(0) )            ' ' get TS file size on SERVER  
                    
-               CreateObject("WScript.Shell").Popup("file size on server = " & FileSizeUbix .Length ,  3, "File already exist  ",64)
+               CreateObject("WScript.Shell").Popup("file size on server = " & FileSizeUbix .Length ,  2, "File already exist  ",64)
             
             If chktssrv ("ts")=False Then
        
-                    CreateObject("WScript.Shell").Popup("No .TS file found in server to copy. " ,  3, "Copy status ... ",64)
+                    CreateObject("WScript.Shell").Popup("No .TS file found in server to copy. " ,  2, "Copy status ... ",64)
 
 						else
 					
-                    CreateObject("WScript.Shell").Popup("All file(s) copied to client successfully." ,  3, "Copy status ... ",64)
+                    CreateObject("WScript.Shell").Popup("All file(s) copied to client successfully." ,  2, "Copy status ... ",64)
 
 		       end if
 
@@ -161,7 +134,9 @@ Public Class Form1
       chkini 
         ContextMenuStrip1.Enabled = True
         me.Show()
-      
+        
+     ' Label2.Text =My.Application.Info.Version.ToString & My.Application.Info.Version.
+         Label2.Text = Application.ProductVersion
         While 1
                   Application.DoEvents()
                   me.Refresh 
