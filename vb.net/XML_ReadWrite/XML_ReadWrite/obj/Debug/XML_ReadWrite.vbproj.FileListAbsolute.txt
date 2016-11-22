@@ -1,0 +1,12 @@
+O:\MY GIT\examples\vb.net\XML_ReadWrite\XML_ReadWrite\bin\Debug\XML_ReadWrite.exe.config
+O:\MY GIT\examples\vb.net\XML_ReadWrite\XML_ReadWrite\bin\Debug\XML_ReadWrite.exe
+O:\MY GIT\examples\vb.net\XML_ReadWrite\XML_ReadWrite\bin\Debug\XML_ReadWrite.pdb
+O:\MY GIT\examples\vb.net\XML_ReadWrite\XML_ReadWrite\bin\Debug\XML_ReadWrite.xml
+O:\MY GIT\examples\vb.net\XML_ReadWrite\XML_ReadWrite\obj\Debug\XML_ReadWrite.Form1.resources
+O:\MY GIT\examples\vb.net\XML_ReadWrite\XML_ReadWrite\obj\Debug\XML_ReadWrite.Resources.resources
+O:\MY GIT\examples\vb.net\XML_ReadWrite\XML_ReadWrite\obj\Debug\XML_ReadWrite.vbproj.GenerateResource.Cache
+O:\MY GIT\examples\vb.net\XML_ReadWrite\XML_ReadWrite\obj\Debug\XML_ReadWrite.exe
+O:\MY GIT\examples\vb.net\XML_ReadWrite\XML_ReadWrite\obj\Debug\XML_ReadWrite.xml
+O:\MY GIT\examples\vb.net\XML_ReadWrite\XML_ReadWrite\obj\Debug\XML_ReadWrite.pdb
+O:\MY GIT\examples\vb.net\XML_ReadWrite\XML_ReadWrite\obj\Debug\XML_ReadWrite.vbprojResolveAssemblyReference.cache
+O:\MY GIT\examples\vb.net\XML_ReadWrite\XML_ReadWrite\obj\Debug\XML_ReadWrite.Form2.resources

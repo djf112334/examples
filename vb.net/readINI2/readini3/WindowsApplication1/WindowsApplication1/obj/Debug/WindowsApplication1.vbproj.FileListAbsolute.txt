@@ -1,0 +1,11 @@
+O:\MY GIT\examples\vb.net\readINI2\readini3\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.exe.config
+O:\MY GIT\examples\vb.net\readINI2\readini3\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.exe
+O:\MY GIT\examples\vb.net\readINI2\readini3\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.pdb
+O:\MY GIT\examples\vb.net\readINI2\readini3\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.xml
+O:\MY GIT\examples\vb.net\readINI2\readini3\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.vbprojResolveAssemblyReference.cache
+O:\MY GIT\examples\vb.net\readINI2\readini3\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.Form1.resources
+O:\MY GIT\examples\vb.net\readINI2\readini3\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.Resources.resources
+O:\MY GIT\examples\vb.net\readINI2\readini3\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.vbproj.GenerateResource.Cache
+O:\MY GIT\examples\vb.net\readINI2\readini3\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.exe
+O:\MY GIT\examples\vb.net\readINI2\readini3\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.xml
+O:\MY GIT\examples\vb.net\readINI2\readini3\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.pdb

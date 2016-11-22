@@ -1,0 +1,17 @@
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\WindowsApplication9\WindowsApplication9\bin\Debug\WindowsApplication9.exe.config
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\WindowsApplication9\WindowsApplication9\bin\Debug\WindowsApplication9.exe
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\WindowsApplication9\WindowsApplication9\bin\Debug\WindowsApplication9.pdb
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\WindowsApplication9\WindowsApplication9\bin\Debug\WindowsApplication9.xml
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\WindowsApplication9\WindowsApplication9\bin\Debug\TestN001.dll
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\WindowsApplication9\WindowsApplication9\bin\Debug\TestN001.pdb
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\WindowsApplication9\WindowsApplication9\obj\Debug\WindowsApplication9.vbprojResolveAssemblyReference.cache
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\WindowsApplication9\WindowsApplication9\obj\Debug\WindowsApplication9.Form1.resources
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\WindowsApplication9\WindowsApplication9\obj\Debug\WindowsApplication9.Resources.resources
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\WindowsApplication9\WindowsApplication9\obj\Debug\WindowsApplication9.vbproj.GenerateResource.Cache
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\WindowsApplication9\WindowsApplication9\obj\Debug\WindowsApplication9.exe
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\WindowsApplication9\WindowsApplication9\obj\Debug\WindowsApplication9.xml
+c:\users\bagherzadeh\documents\visual studio 2015\Projects\WindowsApplication9\WindowsApplication9\obj\Debug\WindowsApplication9.pdb
+o:\MY GIT\examples\vb.net\simple dll\WindowsApplication9\bin\Debug\WindowsApplication9.exe.config
+o:\MY GIT\examples\vb.net\simple dll\WindowsApplication9\obj\Debug\WindowsApplication9.exe
+o:\MY GIT\examples\vb.net\simple dll\WindowsApplication9\obj\Debug\WindowsApplication9.xml
+o:\MY GIT\examples\vb.net\simple dll\WindowsApplication9\obj\Debug\WindowsApplication9.pdb

@@ -1,0 +1,13 @@
+O:\MY GIT\examples\vb.net\simple dll\myassmbcalc\myassmbcalc\myassmbcalc\bin\Debug\myassmbcalc.exe.config
+o:\MY GIT\examples\vb.net\simple dll\myassmbcalc\myassmbcalc\myassmbcalc\obj\Debug\myassmbcalc.vbprojResolveAssemblyReference.cache
+o:\MY GIT\examples\vb.net\simple dll\myassmbcalc\myassmbcalc\myassmbcalc\obj\Debug\myassmbcalc.Form1.resources
+o:\MY GIT\examples\vb.net\simple dll\myassmbcalc\myassmbcalc\myassmbcalc\obj\Debug\myassmbcalc.Resources.resources
+o:\MY GIT\examples\vb.net\simple dll\myassmbcalc\myassmbcalc\myassmbcalc\obj\Debug\myassmbcalc.vbproj.GenerateResource.Cache
+o:\MY GIT\examples\vb.net\simple dll\myassmbcalc\myassmbcalc\myassmbcalc\bin\Debug\myassmbcalc.exe
+o:\MY GIT\examples\vb.net\simple dll\myassmbcalc\myassmbcalc\myassmbcalc\bin\Debug\myassmbcalc.pdb
+o:\MY GIT\examples\vb.net\simple dll\myassmbcalc\myassmbcalc\myassmbcalc\bin\Debug\myassmbcalc.xml
+o:\MY GIT\examples\vb.net\simple dll\myassmbcalc\myassmbcalc\myassmbcalc\bin\Debug\mbkdll3.dll
+o:\MY GIT\examples\vb.net\simple dll\myassmbcalc\myassmbcalc\myassmbcalc\bin\Debug\mbkdll3.pdb
+o:\MY GIT\examples\vb.net\simple dll\myassmbcalc\myassmbcalc\myassmbcalc\obj\Debug\myassmbcalc.exe
+o:\MY GIT\examples\vb.net\simple dll\myassmbcalc\myassmbcalc\myassmbcalc\obj\Debug\myassmbcalc.xml
+o:\MY GIT\examples\vb.net\simple dll\myassmbcalc\myassmbcalc\myassmbcalc\obj\Debug\myassmbcalc.pdb
