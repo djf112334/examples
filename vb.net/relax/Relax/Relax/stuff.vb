@@ -1,7 +1,9 @@
 ﻿Imports System.IO
+Imports System.Threading
+
 Public Class stuff
 
-       
+      
     Public Function CompareFiles(ByVal file1FullPath As String, ByVal file2FullPath As String) As Boolean
 
         If Not File.Exists(file1FullPath) Or Not File.Exists(file2FullPath) Then
@@ -42,20 +44,8 @@ Public Class stuff
         End Using
     End Function
 
-
-
     
-    Public Shared Sub Log(logMessage As String, w As TextWriter)
-
-        w.Write("Log Entry : ")
-        w.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(), _
-            DateTime.Now.ToLongDateString())
-      '  w.WriteLine("  :")
-        w.WriteLine("  :{0}", logMessage)
-        w.WriteLine ("---------------------------------------------------------------")
-    End Sub
-
-    Public Shared Sub DumpLog(r As StreamReader)
+ Public Shared Sub DumpLog(r As StreamReader)
         Dim line As String
         line = r.ReadLine()
         While Not (line Is Nothing)
@@ -64,6 +54,58 @@ Public Class stuff
         End While
     End Sub
 
+
+
+
+  Public Shared sub mylog (logtxt As String)
+    
+      dim logdir =  My.Application.Info.DirectoryPath
+          Directory.CreateDirectory (logdir & "\logs")
+          Thread.Sleep(1000)
+      Dim strFile As String = logdir &  "\logs\ErrorLog_" & DateTime.Today.ToString("dd-MMM-yyyy") & ".log"
+      Dim sw As StreamWriter
+
+
+            Try
+               If (Not File.Exists(strFile)) Then
+                  sw = File.CreateText(strFile)
+                  sw.WriteLine("Start Error Log for today")
+               Else
+                  sw = File.AppendText(strFile)
+               End If
+               sw.WriteLine( DateTime.Now & " Err# [" & Err.Number & "].Des --> "  & logtxt & vbCrLf & "------------------------------------------------------------------" )
+               sw.Close()
+            Catch ex As IOException
+               MsgBox("Error writing to log file.")
+            End Try
+
+
+    End sub
+
+
+       
+   public Shared  sub ttip (tiptxt As String ,tipdelay as integer , tipinit as integer )
+        
+         ' Create the ToolTip and associate with the Form container.
+   Dim toolTip1 As New ToolTip()
+
+   ' Set up the delays for the ToolTip.
+   toolTip1.AutoPopDelay = 5000
+   toolTip1.InitialDelay = 1000
+   toolTip1.ReshowDelay = 500
+   ' Force the ToolTip text to be displayed whether or not the form is active.
+   toolTip1.ShowAlways = True
+
+  
+
+    End sub
+
+
+
+     
+
+
+    
 
 
 End Class

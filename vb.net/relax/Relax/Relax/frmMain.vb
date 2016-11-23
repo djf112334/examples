@@ -15,7 +15,7 @@ Public Class Form1
    Private Sub Main()
         
    On Error goto errpart 
-            
+        
          ' check needed files tu run relax 
             filechk ( "vars.ini")
             filechk ( "extract.exe")
@@ -25,15 +25,19 @@ Public Class Form1
         	filechk ( "LisaCoreWin.dll")
         
              projdir = My.Application.Info.DirectoryPath & "\"   
-             mydate = Now.Date()
-             mytime = TimeOfDay.ToString("hh:mm")
+             mydate = DateTime.Now.ToString ("yyyy-MM-dd")
+             mytime =  DateTime.Now.ToString("HH:mm")
+      
+
+
+
 
              chkini()          'get setting from INI file
               
      '  Dim pathsclient() As String = IO.Directory.GetFiles(projdir &  FilePathClient  , "*.ts" )  
         Dim pathsubix() As String = IO.Directory.GetFiles( FilePathUbix  , "*.ts" )  
       '  Dim comparets As New stuff
-        Dim desfile As String 
+        
         Dim cmdcommand As String 
         Dim OpenCMD 
          
@@ -71,8 +75,8 @@ Public Class Form1
 
 		       end if
 
-                        desfile =   Now.Date.ToString ("yyyy-MM-dd")            ' date format like 2016-10-25
-                            cmdcommand =  projdir  & FilePathClientOut & desfile & " /ts  " &  projdir & FilePathClient
+                        
+                            cmdcommand =  projdir  & FilePathClientOut & mydate  & " /ts  " &  projdir & FilePathClient
                         '   MsgBox (cmdcommand )
                             OpenCMD = CreateObject("wscript.shell")
                         OpenCMD.run("cmd /c extract.exe " & cmdcommand )
@@ -82,11 +86,11 @@ Public Class Form1
 
             '   Remove folders  ==============================================================================================================
 
-                    delfile  (projdir  & FilePathClientOut &desfile &  removepath1)
-                    delfile  (projdir  & FilePathClientOut &desfile &  removepath2)
-                    delfile  (projdir  & FilePathClientOut &desfile &  removepath3)
-                    delfile  (projdir  & FilePathClientOut &desfile &  removepath4)
-                    delfile  (projdir  & FilePathClientOut &desfile &  removepath5)
+                    delfile  (projdir  & FilePathClientOut &mydate &  removepath1)
+                    delfile  (projdir  & FilePathClientOut &mydate &  removepath2)
+                    delfile  (projdir  & FilePathClientOut &mydate &  removepath3)
+                    delfile  (projdir  & FilePathClientOut &mydate &  removepath4)
+                    delfile  (projdir  & FilePathClientOut &mydate &  removepath5)
 
             
 
@@ -103,7 +107,7 @@ Public Class Form1
 
                     CreateObject("WScript.Shell").Popup(".TS file deleting ... , Operational successfully completed. " ,  3, "RELAX Inform",64)
 
-                    mytimeend = TimeOfDay.ToString("hh:mm")
+                    mytimeend = DateTime.Now.ToString("HH:mm")  
 
      ex:
                         end if 
@@ -111,12 +115,15 @@ Public Class Form1
   errpart:
 
         If Err.Number = 76 then 
+                              stuff.mylog (ErrorToString )
+
             
         
-                Using w As StreamWriter = File.AppendText(projdir & "relax.log")
-                stuff .  Log(ErrorToString, w)
-                End Using
+                
                 msgbox ( ErrorToString  & " RELAX need correct path to access the TS file.Please set correct path in vars.ini.RELAX now terminate.",vbCritical ,"TS path not found")
+                         stuff.mylog (ErrorToString )
+
+
       end If 
     
         If Err.Number <> 0 then  
@@ -238,7 +245,7 @@ Public Class Form1
          projdir = My.Application.Info.DirectoryPath & "\" & filename
         If File.Exists(projdir) = False Then
             MsgBox("RELAX need some files to runing correctly but  " & projdir & " not found in current dir.Please copy this file to current project dir and run it again.RELAX terminated by now.", vbCritical, "File not found")
-        
+            stuff.mylog ( "RELAX need some files to runing correctly but  " & projdir & " not found in current dir.Please copy this file to current project dir and run it again.RELAX terminated by now.File not found")
 
             End
         End If
