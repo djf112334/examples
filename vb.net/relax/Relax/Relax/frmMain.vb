@@ -29,9 +29,6 @@ Public Class Form1
              mytime =  DateTime.Now.ToString("HH:mm")
       
 
-
-
-
              chkini()          'get setting from INI file
               
      '  Dim pathsclient() As String = IO.Directory.GetFiles(projdir &  FilePathClient  , "*.ts" )  
@@ -137,6 +134,8 @@ Public Class Form1
         me.Hide()
     End Sub
 
+  
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
       chkini 
         ContextMenuStrip1.Enabled = True
@@ -173,6 +172,7 @@ Public Class Form1
         'Disable the Context Menu:
       ''  ContextMenuStrip1.Enabled = False
         me.Show()
+         Me.TabControl1.SelectedTab = TabPage2
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
@@ -187,7 +187,14 @@ Public Class Form1
     End Sub
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
-        frmAboutBox1.Show
+Me.WindowState = FormWindowState.Normal
+        'Show in the task bar:
+        Me.ShowInTaskbar = True
+        'Disable the Context Menu:
+      ''  ContextMenuStrip1.Enabled = False
+        me.Show()
+        Me.TabControl1.SelectedTab = TabPage3
+           
 
     End Sub
 
@@ -244,7 +251,7 @@ Public Class Form1
     Private Function filechk(filename As String)
          projdir = My.Application.Info.DirectoryPath & "\" & filename
         If File.Exists(projdir) = False Then
-            MsgBox("RELAX need some files to runing correctly but  " & projdir & " not found in current dir.Please copy this file to current project dir and run it again.RELAX terminated by now.", vbCritical, "File not found")
+            MsgBox("RELAX need some files to runing correctly but  " & projdir & " not found in current dir.Please copy this file to current application  dir and run it again.RELAX terminated by now.", vbCritical, "File not found")
             stuff.mylog ( "RELAX need some files to runing correctly but  " & projdir & " not found in current dir.Please copy this file to current project dir and run it again.RELAX terminated by now.File not found")
 
             End
@@ -295,4 +302,16 @@ Public Class Form1
 
     End Function
 
+    Private Sub NotifyIcon1_MouseDown(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseDown
+        
+        If e.Button = MouseButtons.Left  then
+       'When Show menu clicks, it will show the form:
+        Me.WindowState = FormWindowState.Normal
+        'Show in the task bar:
+        Me.ShowInTaskbar = True
+        'Disable the Context Menu:
+      ''  ContextMenuStrip1.Enabled = False
+        me.Show()
+        End If
+    End Sub
 End Class

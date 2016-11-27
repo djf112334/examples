@@ -65,31 +65,31 @@ Partial Class Form1
         '
         Me.NotifyIcon1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"),System.Drawing.Icon)
-        Me.NotifyIcon1.Text = "NotifyIcon1"
+        Me.NotifyIcon1.Text = "Relax Engine"
         Me.NotifyIcon1.Visible = true
         '
         'ContextMenuStrip1
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowToolStripMenuItem, Me.AboutToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(124, 70)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(117, 70)
         '
         'ShowToolStripMenuItem
         '
         Me.ShowToolStripMenuItem.Name = "ShowToolStripMenuItem"
-        Me.ShowToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
-        Me.ShowToolStripMenuItem.Text = "Show me"
+        Me.ShowToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ShowToolStripMenuItem.Text = "Settings"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'ImageList1
@@ -134,14 +134,14 @@ Partial Class Form1
         '
         Me.RichTextBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(178,Byte))
-        Me.RichTextBox1.ForeColor = System.Drawing.Color.Red
+        Me.RichTextBox1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(178,Byte))
+        Me.RichTextBox1.ForeColor = System.Drawing.Color.Chartreuse
         Me.RichTextBox1.Location = New System.Drawing.Point(8, 8)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.Size = New System.Drawing.Size(462, 75)
         Me.RichTextBox1.TabIndex = 5
-        Me.RichTextBox1.Text = "This engine auto extract recorded TS file on UBIX Server..Config file needed to r"& _ 
-    "un this program correctly."
+        Me.RichTextBox1.Text = "Welcome to RELAX Engine"&Global.Microsoft.VisualBasic.ChrW(10)&"This program auto extract recorded TS file on UBIX Server"& _ 
+    "..Config file needed "&Global.Microsoft.VisualBasic.ChrW(10)&"to be configured before first run."&Global.Microsoft.VisualBasic.ChrW(10)
         '
         'TabPage2
         '
@@ -156,7 +156,7 @@ Partial Class Form1
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(484, 235)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Configs"
+        Me.TabPage2.Text = "Settings"
         '
         'RadioButton2
         '
@@ -229,18 +229,19 @@ Partial Class Form1
         Me.RichTextBox2.ForeColor = System.Drawing.Color.Red
         Me.RichTextBox2.Location = New System.Drawing.Point(10, 5)
         Me.RichTextBox2.Name = "RichTextBox2"
-        Me.RichTextBox2.Size = New System.Drawing.Size(468, 140)
+        Me.RichTextBox2.Size = New System.Drawing.Size(468, 174)
         Me.RichTextBox2.TabIndex = 6
-        Me.RichTextBox2.Text = "Description :"&Global.Microsoft.VisualBasic.ChrW(10)&"Program developer and designer : M.A. Bagherzadeh"&Global.Microsoft.VisualBasic.ChrW(10)&"Freeware and free"& _ 
-    " to copy . "&Global.Microsoft.VisualBasic.ChrW(10)&"(need UBIX Server to work) ."&Global.Microsoft.VisualBasic.ChrW(10)&"www.foxnet.ir"&Global.Microsoft.VisualBasic.ChrW(10)
+        Me.RichTextBox2.Text = "RELAX Engine"&Global.Microsoft.VisualBasic.ChrW(10)&"TS File auto extractor and automation tool."&Global.Microsoft.VisualBasic.ChrW(10)&"Program developer and de"& _ 
+    "signer : M.B.K"&Global.Microsoft.VisualBasic.ChrW(10)&"Freeware and free to copy . "&Global.Microsoft.VisualBasic.ChrW(10)&"(this program need UBIX Server to wo"& _ 
+    "rk) ."&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(10)&"www.ir"&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(10)
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.Relax.My.Resources.Resources.satellite_vista
-        Me.PictureBox1.Location = New System.Drawing.Point(6, 13)
+        Me.PictureBox1.Image = Global.Relax.My.Resources.Resources.satellite_icon_5_1_
+        Me.PictureBox1.Location = New System.Drawing.Point(8, 13)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(128, 128)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.Size = New System.Drawing.Size(136, 157)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = false
         '
@@ -260,6 +261,7 @@ Partial Class Form1
         Me.MinimizeBox = false
         Me.Name = "Form1"
         Me.ShowInTaskbar = false
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "RELAX Engine"
         Me.ContextMenuStrip1.ResumeLayout(false)
         Me.TabControl1.ResumeLayout(false)
@@ -280,7 +282,6 @@ End Sub
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ImageList1 As ImageList
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label2 As Label
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
@@ -293,4 +294,5 @@ End Sub
     Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

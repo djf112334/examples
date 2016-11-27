@@ -33,7 +33,7 @@
     <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
     <AssemblyInfoVersionSettings>
     </AssemblyInfoVersionSettings>
-    <AssemblyVersion>2.0.0.185</AssemblyVersion>
+    <AssemblyVersion>2.0.0.208</AssemblyVersion>
     <PrimaryVersionType>AssemblyFileVersionAttribute</PrimaryVersionType>
     <AssemblyVersionSettings>
     </AssemblyVersionSettings>
@@ -166,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\satellite_vista.png.png" />
+    <None Include="Resources\satellite-icon-5[1].png" />
     <Content Include="satellite_dish.ico" />
   </ItemGroup>
   <ItemGroup>
