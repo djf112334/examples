@@ -152,6 +152,12 @@ Public Class Form1
 
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+      '  stuff.ttip ("AAA","bbbb",1000)
+
+       stuff.ttip2 ("aaa")
+
+    End Sub
 
     Private Sub Form1_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
         'Cancel Closing:
@@ -251,9 +257,9 @@ Me.WindowState = FormWindowState.Normal
     Private Function filechk(filename As String)
          projdir = My.Application.Info.DirectoryPath & "\" & filename
         If File.Exists(projdir) = False Then
-            MsgBox("RELAX need some files to runing correctly but  " & projdir & " not found in current dir.Please copy this file to current application  dir and run it again.RELAX terminated by now.", vbCritical, "File not found")
+         '   MsgBox("RELAX need some files to runing correctly but  " & projdir & " not found in current dir.Please copy this file to current application  dir and run it again.RELAX terminated by now.", vbCritical, "File not found")
             stuff.mylog ( "RELAX need some files to runing correctly but  " & projdir & " not found in current dir.Please copy this file to current project dir and run it again.RELAX terminated by now.File not found")
-
+               stuff.ttip2 ("RELAX need some files to runing correctly but  " & projdir & " not found in current dir.Please copy this file to current application  dir and run it again.RELAX terminated by now.")
             End
         End If
             projdir =""

@@ -33,7 +33,7 @@
     <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
     <AssemblyInfoVersionSettings>
     </AssemblyInfoVersionSettings>
-    <AssemblyVersion>2.0.0.208</AssemblyVersion>
+    <AssemblyVersion>2.0.0.237</AssemblyVersion>
     <PrimaryVersionType>AssemblyFileVersionAttribute</PrimaryVersionType>
     <AssemblyVersionSettings>
     </AssemblyVersionSettings>
@@ -104,12 +104,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="frmAboutBox1.Designer.vb">
-      <DependentUpon>frmAboutBox1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmAboutBox1.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -136,9 +130,6 @@
     <Compile Include="stuff.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmAboutBox1.resx">
-      <DependentUpon>frmAboutBox1.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>

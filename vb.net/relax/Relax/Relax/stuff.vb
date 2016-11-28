@@ -84,28 +84,32 @@ Public Class stuff
 
 
        
-   public Shared  sub ttip (tiptxt As String ,tipdelay as integer , tipinit as integer )
+   public Shared  sub ttip (title As String,txt As String  ,delay as integer    )
+
         
-         ' Create the ToolTip and associate with the Form container.
-   Dim toolTip1 As New ToolTip()
-
-   ' Set up the delays for the ToolTip.
-   toolTip1.AutoPopDelay = 5000
-   toolTip1.InitialDelay = 1000
-   toolTip1.ReshowDelay = 500
-   ' Force the ToolTip text to be displayed whether or not the form is active.
-   toolTip1.ShowAlways = True
-
-  
+           Form1.   notifyIcon1.BalloonTipIcon = ToolTipIcon.Error
+           Form1.  notifyIcon1.BalloonTipTitle = title
+           Form1. notifyIcon1.BalloonTipText = txt
+           Form1. notifyIcon1.ShowBalloonTip(delay)
+     
 
     End sub
 
 
 
+     public Shared  sub ttip2  (txt As String )
+
+
+
+      Form1.    NotifyIcon1.BalloonTipText = txt
+      Form1.   NotifyIcon1.ShowBalloonTip(8000)
+       
      
 
 
-    
+        End sub
 
+   
+ 
 
 End Class
