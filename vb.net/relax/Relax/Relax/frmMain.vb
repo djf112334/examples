@@ -12,6 +12,8 @@ Public Class Form1
     Public FileSizeUbix as System.IO.FileInfo
     Public nofileclient  As Boolean   = False 
     Public  co as Integer= chktimer
+      Public variable As Integer = 1
+
    Private Sub Main()
         
    On Error goto errpart 
@@ -140,7 +142,8 @@ Public Class Form1
       chkini 
         ContextMenuStrip1.Enabled = True
         me.Show()
-        
+        getxml.readxml  
+
      ' Label2.Text =My.Application.Info.Version.ToString & My.Application.Info.Version.
          Label2.Text = Application.ProductVersion
         While 1
@@ -155,9 +158,22 @@ Public Class Form1
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
       '  stuff.ttip ("AAA","bbbb",1000)
 
-       stuff.ttip2 ("aaa")
+     '  stuff.ttip2 ("aaa")
 
+
+        
+     
+        
+      stuff.notify (5000,"test mikonim title asli injast","It looks like the problem is with the instantiation of your class; you've instantiated as Form1, when it should befrmCentsConverter; i.e. Dim frmConvert As New frmCentsConverter, instead of Dim frmConvert As New Form1. It could also be that you've renamed the start-up form of the a",Color.GreenYellow )
+        
+
+        
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) 
+        txtstartin1.Text=startin1 
+    End Sub
+ 
 
     Private Sub Form1_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
         'Cancel Closing:

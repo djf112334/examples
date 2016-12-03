@@ -33,7 +33,7 @@
     <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
     <AssemblyInfoVersionSettings>
     </AssemblyInfoVersionSettings>
-    <AssemblyVersion>2.0.0.237</AssemblyVersion>
+    <AssemblyVersion>2.0.0.281</AssemblyVersion>
     <PrimaryVersionType>AssemblyFileVersionAttribute</PrimaryVersionType>
     <AssemblyVersionSettings>
     </AssemblyVersionSettings>
@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="FormAnimator.vb" />
     <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -111,7 +112,14 @@
       <DependentUpon>frmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmNotification.Designer.vb">
+      <DependentUpon>frmNotification.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmNotification.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="getini.vb" />
+    <Compile Include="getxml.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -132,6 +140,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNotification.resx">
+      <DependentUpon>frmNotification.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -158,6 +169,10 @@
   <ItemGroup>
     <None Include="bin\satellite_vista.png.png" />
     <None Include="Resources\satellite-icon-5[1].png" />
+    <None Include="Resources\btnClicked.png" />
+    <None Include="Resources\btnLow.png" />
+    <None Include="Resources\btnHigh.png" />
+    <None Include="Resources\Image1.png" />
     <Content Include="satellite_dish.ico" />
   </ItemGroup>
   <ItemGroup>

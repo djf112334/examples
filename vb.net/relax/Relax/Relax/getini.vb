@@ -214,4 +214,5 @@ Public Class goini
         RemoveBrackets = TempLine.Substring(1, TempLine.Length - 2)
     End Function
 
+
 End Class

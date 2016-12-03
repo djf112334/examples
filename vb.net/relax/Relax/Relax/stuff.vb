@@ -110,6 +110,20 @@ Public Class stuff
         End sub
 
    
+    public Shared sub notify ( tmr As Integer , txt1  As String , txt2 As String,clr As color )
+
+
+          
+        Dim Notification As New frmNotification(tmr,txt1,txt2)
+       
+         Notification.BackColor=clr
+      
+        
+        Notification.Show()
+
+    
+
+    End sub
  
 
 End Class
