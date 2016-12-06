@@ -33,7 +33,7 @@
     <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
     <AssemblyInfoVersionSettings>
     </AssemblyInfoVersionSettings>
-    <AssemblyVersion>2.0.0.281</AssemblyVersion>
+    <AssemblyVersion>2.0.0.455</AssemblyVersion>
     <PrimaryVersionType>AssemblyFileVersionAttribute</PrimaryVersionType>
     <AssemblyVersionSettings>
     </AssemblyVersionSettings>
@@ -72,7 +72,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>satellite_dish.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\relax_mainico.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
@@ -146,9 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -167,13 +167,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\satellite_vista.png.png" />
+    <Content Include="Resources\favicon %282%29.ico" />
+    <None Include="Resources\Logomakr_5yCwaL.png" />
+    <Content Include="Resources\relax_mainico.ico" />
+    <None Include="Resources\TooshehLogo.png" />
+    <Content Include="Resources\tryico.ico" />
     <None Include="Resources\satellite-icon-5[1].png" />
     <None Include="Resources\btnClicked.png" />
     <None Include="Resources\btnLow.png" />
     <None Include="Resources\btnHigh.png" />
     <None Include="Resources\Image1.png" />
-    <Content Include="satellite_dish.ico" />
+    <None Include="Resources\Logomakr_5N2fhP.ico" />
+    <None Include="Resources\Logomakr_4dC11Q.ico" />
+    <None Include="Resources\Toosheh+Logo.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6">
@@ -186,6 +192,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

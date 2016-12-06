@@ -118,12 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="satellite_vista" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\satellite_vista.png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="satellite-icon-5[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\satellite-icon-5[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="btnClicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnClicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -135,5 +129,17 @@
   </data>
   <data name="Image1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Image1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logomakr_4dC11Q" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logomakr_4dC11Q.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logomakr_5N2fhP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logomakr_5N2fhP.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logomakr_5yCwaL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logomakr_5yCwaL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TooshehLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TooshehLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

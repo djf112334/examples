@@ -1,9 +1,11 @@
 ﻿Imports System.IO
 Imports System.Threading
+  
 
 Public Class stuff
 
-      
+  
+
     Public Function CompareFiles(ByVal file1FullPath As String, ByVal file2FullPath As String) As Boolean
 
         If Not File.Exists(file1FullPath) Or Not File.Exists(file2FullPath) Then
@@ -94,36 +96,44 @@ Public Class stuff
      
 
     End sub
+    public Shared  sub ttip2  (txt As String )
 
-
-
-     public Shared  sub ttip2  (txt As String )
-
-
-
-      Form1.    NotifyIcon1.BalloonTipText = txt
+        Form1.    NotifyIcon1.BalloonTipText = txt
       Form1.   NotifyIcon1.ShowBalloonTip(8000)
-       
-     
-
-
+      
         End sub
 
    
     public Shared sub notify ( tmr As Integer , txt1  As String , txt2 As String,clr As color )
-
-
-          
+ 
         Dim Notification As New frmNotification(tmr,txt1,txt2)
-       
-         Notification.BackColor=clr
-      
+       Notification.BackColor=clr
+      Notification.Show()
         
-        Notification.Show()
+        End sub
+ 
+   public Shared   Function   getargs()
+              Dim CommandLineArgs As System.Collections.ObjectModel.ReadOnlyCollection(Of String) = My.Application.CommandLineArgs
 
-    
+         For i As Integer = 0 To CommandLineArgs.Count - 1
+          'MessageBox.Show(CommandLineArgs(i))
+             if  (CommandLineArgs(i)) ="/s" Then 
+                 'MsgBox ("end")
+              '  stuff.notify   (1000,"salaam","sss",Color.Red )
+                'When Show menu clicks, it will show the form:
+         
 
-    End sub
+        form1.Show()
+      
+
+             End If 
+             if  (CommandLineArgs(i)) = "/f"  Then
+                 'MsgBox ("null")
+             End If 
+
+        Next
+    End Function
+
  
 
 End Class

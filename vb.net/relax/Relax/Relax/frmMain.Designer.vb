@@ -24,7 +24,6 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ShowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -36,6 +35,7 @@ Partial Class Form1
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.txtchktimer = New System.Windows.Forms.TextBox()
@@ -69,8 +69,8 @@ Partial Class Form1
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.ContextMenuStrip1.SuspendLayout
         Me.TabControl1.SuspendLayout
         Me.TabPage1.SuspendLayout
@@ -81,16 +81,8 @@ Partial Class Form1
         Me.GroupBox1.SuspendLayout
         Me.TabPage3.SuspendLayout
         CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(8, 368)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(102, 32)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Send to Tray"
-        Me.Button1.UseVisualStyleBackColor = true
         '
         'NotifyIcon1
         '
@@ -134,7 +126,7 @@ Partial Class Form1
         Me.Label2.AutoSize = true
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178,Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(8, 424)
+        Me.Label2.Location = New System.Drawing.Point(8, 491)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(57, 13)
         Me.Label2.TabIndex = 8
@@ -146,10 +138,10 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(178,Byte))
-        Me.TabControl1.Location = New System.Drawing.Point(150, 12)
+        Me.TabControl1.Location = New System.Drawing.Point(150, 13)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(478, 484)
+        Me.TabControl1.Size = New System.Drawing.Size(549, 476)
         Me.TabControl1.TabIndex = 9
         '
         'TabPage1
@@ -159,7 +151,7 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 27)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(470, 453)
+        Me.TabPage1.Size = New System.Drawing.Size(541, 445)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Welcome"
         '
@@ -167,18 +159,21 @@ Partial Class Form1
         '
         Me.RichTextBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(178,Byte))
+        Me.RichTextBox1.CausesValidation = false
+        Me.RichTextBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RichTextBox1.Font = New System.Drawing.Font("Arial", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(178,Byte))
         Me.RichTextBox1.ForeColor = System.Drawing.Color.Chartreuse
-        Me.RichTextBox1.Location = New System.Drawing.Point(8, 8)
+        Me.RichTextBox1.Location = New System.Drawing.Point(3, 3)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(456, 383)
+        Me.RichTextBox1.Size = New System.Drawing.Size(535, 439)
         Me.RichTextBox1.TabIndex = 5
-        Me.RichTextBox1.Text = "Welcome to RELAX Engine"&Global.Microsoft.VisualBasic.ChrW(10)&"This program auto extract recorded TS file on UBIX Server"& _ 
-    "..Config file needed "&Global.Microsoft.VisualBasic.ChrW(10)&"to be configured before first run."&Global.Microsoft.VisualBasic.ChrW(10)
+        Me.RichTextBox1.TabStop = false
+        Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
         '
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0,Byte),Integer), CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer))
+        Me.TabPage2.Controls.Add(Me.Button4)
         Me.TabPage2.Controls.Add(Me.Button3)
         Me.TabPage2.Controls.Add(Me.GroupBox4)
         Me.TabPage2.Controls.Add(Me.GroupBox3)
@@ -188,16 +183,26 @@ Partial Class Form1
         Me.TabPage2.Location = New System.Drawing.Point(4, 27)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(470, 453)
+        Me.TabPage2.Size = New System.Drawing.Size(541, 445)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Settings"
+        '
+        'Button4
+        '
+        Me.Button4.Font = New System.Drawing.Font("Arial", 9!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178,Byte))
+        Me.Button4.Location = New System.Drawing.Point(283, 410)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(116, 26)
+        Me.Button4.TabIndex = 25
+        Me.Button4.Text = "Reload configs"
+        Me.Button4.UseVisualStyleBackColor = true
         '
         'Button3
         '
         Me.Button3.Font = New System.Drawing.Font("Arial", 9!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178,Byte))
-        Me.Button3.Location = New System.Drawing.Point(362, 420)
+        Me.Button3.Location = New System.Drawing.Point(405, 410)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(92, 27)
+        Me.Button3.Size = New System.Drawing.Size(116, 26)
         Me.Button3.TabIndex = 24
         Me.Button3.Text = "Save configs"
         Me.Button3.UseVisualStyleBackColor = true
@@ -210,16 +215,16 @@ Partial Class Form1
         Me.GroupBox4.ForeColor = System.Drawing.Color.Yellow
         Me.GroupBox4.Location = New System.Drawing.Point(252, 24)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(208, 108)
+        Me.GroupBox4.Size = New System.Drawing.Size(269, 108)
         Me.GroupBox4.TabIndex = 23
         Me.GroupBox4.TabStop = false
         Me.GroupBox4.Text = "Interval timers:"
         '
         'txtchktimer
         '
-        Me.txtchktimer.Location = New System.Drawing.Point(142, 18)
+        Me.txtchktimer.Location = New System.Drawing.Point(150, 18)
         Me.txtchktimer.Name = "txtchktimer"
-        Me.txtchktimer.Size = New System.Drawing.Size(60, 22)
+        Me.txtchktimer.Size = New System.Drawing.Size(73, 22)
         Me.txtchktimer.TabIndex = 12
         '
         'Label15
@@ -247,9 +252,9 @@ Partial Class Form1
         Me.GroupBox3.Controls.Add(Me.Label13)
         Me.GroupBox3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178,Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.Yellow
-        Me.GroupBox3.Location = New System.Drawing.Point(11, 240)
+        Me.GroupBox3.Location = New System.Drawing.Point(11, 241)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(449, 152)
+        Me.GroupBox3.Size = New System.Drawing.Size(510, 147)
         Me.GroupBox3.TabIndex = 16
         Me.GroupBox3.TabStop = false
         Me.GroupBox3.Text = "Removing paths after extract:"
@@ -258,35 +263,35 @@ Partial Class Form1
         '
         Me.txtremovepath5.Location = New System.Drawing.Point(60, 119)
         Me.txtremovepath5.Name = "txtremovepath5"
-        Me.txtremovepath5.Size = New System.Drawing.Size(383, 22)
+        Me.txtremovepath5.Size = New System.Drawing.Size(434, 22)
         Me.txtremovepath5.TabIndex = 24
         '
         'txtremovepath4
         '
         Me.txtremovepath4.Location = New System.Drawing.Point(60, 94)
         Me.txtremovepath4.Name = "txtremovepath4"
-        Me.txtremovepath4.Size = New System.Drawing.Size(383, 22)
+        Me.txtremovepath4.Size = New System.Drawing.Size(434, 22)
         Me.txtremovepath4.TabIndex = 23
         '
         'txtremovepath3
         '
         Me.txtremovepath3.Location = New System.Drawing.Point(60, 69)
         Me.txtremovepath3.Name = "txtremovepath3"
-        Me.txtremovepath3.Size = New System.Drawing.Size(383, 22)
+        Me.txtremovepath3.Size = New System.Drawing.Size(434, 22)
         Me.txtremovepath3.TabIndex = 22
         '
         'txtremovepath2
         '
         Me.txtremovepath2.Location = New System.Drawing.Point(60, 44)
         Me.txtremovepath2.Name = "txtremovepath2"
-        Me.txtremovepath2.Size = New System.Drawing.Size(383, 22)
+        Me.txtremovepath2.Size = New System.Drawing.Size(434, 22)
         Me.txtremovepath2.TabIndex = 21
         '
         'txtremovepath1
         '
         Me.txtremovepath1.Location = New System.Drawing.Point(60, 19)
         Me.txtremovepath1.Name = "txtremovepath1"
-        Me.txtremovepath1.Size = New System.Drawing.Size(383, 22)
+        Me.txtremovepath1.Size = New System.Drawing.Size(434, 22)
         Me.txtremovepath1.TabIndex = 20
         '
         'Label9
@@ -356,7 +361,7 @@ Partial Class Form1
         Me.GroupBox2.ForeColor = System.Drawing.Color.Yellow
         Me.GroupBox2.Location = New System.Drawing.Point(9, 139)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(451, 96)
+        Me.GroupBox2.Size = New System.Drawing.Size(512, 96)
         Me.GroupBox2.TabIndex = 22
         Me.GroupBox2.TabStop = false
         Me.GroupBox2.Text = "File and folders path:"
@@ -365,21 +370,21 @@ Partial Class Form1
         '
         Me.txtfilepathclientout.Location = New System.Drawing.Point(160, 68)
         Me.txtfilepathclientout.Name = "txtfilepathclientout"
-        Me.txtfilepathclientout.Size = New System.Drawing.Size(285, 22)
+        Me.txtfilepathclientout.Size = New System.Drawing.Size(336, 22)
         Me.txtfilepathclientout.TabIndex = 15
         '
         'txtfilepathclient
         '
         Me.txtfilepathclient.Location = New System.Drawing.Point(160, 41)
         Me.txtfilepathclient.Name = "txtfilepathclient"
-        Me.txtfilepathclient.Size = New System.Drawing.Size(285, 22)
+        Me.txtfilepathclient.Size = New System.Drawing.Size(336, 22)
         Me.txtfilepathclient.TabIndex = 15
         '
         'txtfilepathubix
         '
         Me.txtfilepathubix.Location = New System.Drawing.Point(160, 15)
         Me.txtfilepathubix.Name = "txtfilepathubix"
-        Me.txtfilepathubix.Size = New System.Drawing.Size(285, 22)
+        Me.txtfilepathubix.Size = New System.Drawing.Size(336, 22)
         Me.txtfilepathubix.TabIndex = 15
         '
         'Label6
@@ -500,11 +505,12 @@ Partial Class Form1
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.TabPage3.Controls.Add(Me.PictureBox3)
         Me.TabPage3.Controls.Add(Me.RichTextBox2)
         Me.TabPage3.Location = New System.Drawing.Point(4, 27)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(470, 453)
+        Me.TabPage3.Size = New System.Drawing.Size(541, 445)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "About"
         '
@@ -512,51 +518,45 @@ Partial Class Form1
         '
         Me.RichTextBox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.RichTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(178,Byte))
+        Me.RichTextBox2.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.RichTextBox2.ForeColor = System.Drawing.Color.Red
-        Me.RichTextBox2.Location = New System.Drawing.Point(10, 5)
+        Me.RichTextBox2.Location = New System.Drawing.Point(6, 6)
         Me.RichTextBox2.Name = "RichTextBox2"
-        Me.RichTextBox2.Size = New System.Drawing.Size(436, 174)
+        Me.RichTextBox2.Size = New System.Drawing.Size(525, 248)
         Me.RichTextBox2.TabIndex = 6
-        Me.RichTextBox2.Text = "RELAX Engine"&Global.Microsoft.VisualBasic.ChrW(10)&"TS File auto extractor and automation tool."&Global.Microsoft.VisualBasic.ChrW(10)&"Program developer and de"& _ 
-    "signer : M.B.K"&Global.Microsoft.VisualBasic.ChrW(10)&"Freeware and free to copy . "&Global.Microsoft.VisualBasic.ChrW(10)&"(this program need UBIX Server to wo"& _ 
-    "rk) ."&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(10)&"www.ir"&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(10)
+        Me.RichTextBox2.Text = resources.GetString("RichTextBox2.Text")
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.Relax.My.Resources.Resources.satellite_icon_5_1_
-        Me.PictureBox1.Location = New System.Drawing.Point(8, 13)
+        Me.PictureBox1.ErrorImage = Nothing
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"),System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(8, 20)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(136, 152)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = false
         '
-        'Button2
+        'PictureBox3
         '
-        Me.Button2.Location = New System.Drawing.Point(15, 285)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 10
-        Me.Button2.Text = "tip"
-        Me.Button2.UseVisualStyleBackColor = true
-        '
-        'ContextMenuStrip2
-        '
-        Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
-        Me.ContextMenuStrip2.Size = New System.Drawing.Size(61, 4)
+        Me.PictureBox3.ErrorImage = Nothing
+        Me.PictureBox3.Image = Global.Relax.My.Resources.Resources.TooshehLogo
+        Me.PictureBox3.Location = New System.Drawing.Point(370, 276)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(161, 163)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 11
+        Me.PictureBox3.TabStop = false
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0,Byte),Integer), CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer))
-        Me.ClientSize = New System.Drawing.Size(638, 508)
-        Me.Controls.Add(Me.Button2)
+        Me.ClientSize = New System.Drawing.Size(707, 508)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Button1)
         Me.DoubleBuffered = true
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
@@ -581,12 +581,11 @@ Partial Class Form1
         Me.GroupBox1.PerformLayout
         Me.TabPage3.ResumeLayout(false)
         CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
         Me.PerformLayout
 
 End Sub
-
-    Friend WithEvents Button1 As Button
     Friend WithEvents NotifyIcon1 As NotifyIcon
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents ShowToolStripMenuItem As ToolStripMenuItem
@@ -601,7 +600,6 @@ End Sub
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents RichTextBox2 As RichTextBox
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Button2 As Button
     Friend WithEvents Label13 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label11 As Label
@@ -622,7 +620,6 @@ End Sub
     Friend WithEvents txtfilepathubix As TextBox
     Friend WithEvents txtstartin3 As TextBox
     Friend WithEvents txtstartin2 As TextBox
-    Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents txtremovepath5 As TextBox
     Friend WithEvents txtremovepath4 As TextBox
@@ -633,4 +630,7 @@ End Sub
     Friend WithEvents txtchktimer As TextBox
     Friend WithEvents Label15 As Label
     Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents PictureBox3 As PictureBox
 End Class

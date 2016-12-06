@@ -4,13 +4,9 @@ Imports System.IO
 Public   Class getxml
     public Shared Function wrtxml
         
-            
          'first let's check if there is a file MyXML.xml into our application folder
 		'if there wasn't a file something like that, then let's create a new one.
-
-		If IO.File.Exists("o:\MyXML.xml") = False Then
-			
-			'declare our xmlwritersettings object
+        'declare our xmlwritersettings object
 			Dim settings As New XmlWriterSettings()
 
 			'lets tell to our xmlwritersettings that it must use indention for our xml
@@ -18,7 +14,7 @@ Public   Class getxml
 
 			'lets create the MyXML.xml document, the first parameter was the Path/filename of xml file
 			' the second parameter was our xml settings
-			Dim XmlWrt As XmlWriter = XmlWriter.Create("o:\MyXML.xml", settings)
+			Dim XmlWrt As XmlWriter = XmlWriter.Create( My.Application.Info.DirectoryPath & "\vars.xml", settings)
 
 			With XmlWrt
 
@@ -37,21 +33,20 @@ Public   Class getxml
 				' The person nodes.
 
 				.WriteStartElement("startin1")
-				.WriteString("11:30")
+				.WriteString(Form1.txtstartin1.Text )
 				.WriteEndElement()
 
 				.WriteStartElement("startin2")
-				.WriteString("11:50")
+				.WriteString(Form1.txtstartin2.Text)
 				.WriteEndElement()
 
                 .WriteStartElement("startin3")
-				.WriteString("0")
+				.WriteString(Form1.txtstartin3.Text)
 				.WriteEndElement()
 
 
 				' The end of this person.
 				.WriteEndElement()
-                    
                     
                 	        ' Start our first person.
 				        .WriteStartElement("path")
@@ -59,15 +54,15 @@ Public   Class getxml
 				        ' The person nodes.
 
 				        .WriteStartElement("FilePathUbix")
-				        .WriteString("o:\rlxtst\ubix\")
+				        .WriteString(Form1.txtfilepathubix .Text)
 				        .WriteEndElement()
 
 				        .WriteStartElement("FilePathClient")
-				        .WriteString("ts\")
+				        .WriteString(Form1.txtfilepathclient .Text)
 				        .WriteEndElement()
 
                         .WriteStartElement("FilePathClientOut")
-				        .WriteString("vid\")
+				        .WriteString(Form1.txtfilepathclientout .Text)
 				        .WriteEndElement()
 
 
@@ -81,23 +76,23 @@ Public   Class getxml
 				                ' The person nodes.
 
 				                .WriteStartElement("path1")
-				                .WriteString("\.lisa\")
+				                .WriteString(Form1.txtremovepath1.Text)
 				                .WriteEndElement()
 
 				                .WriteStartElement("path2")
-				                .WriteString("\toosheh\نرم افزار\")
+				                .WriteString(Form1.txtremovepath2.Text)
 				                .WriteEndElement()
 
                                 .WriteStartElement("path3")
-				                .WriteString("\updates\")
+				                .WriteString(Form1.txtremovepath3.Text)
 				                .WriteEndElement()
 
                                  .WriteStartElement("path4")
-				                .WriteString("")
+				                .WriteString(Form1.txtremovepath4.Text)
 				                .WriteEndElement()
 
                                  .WriteStartElement("path5")
-				                .WriteString("")
+				                .WriteString(Form1.txtremovepath5.Text)
 				                .WriteEndElement()
 
 				                ' The end of this person.
@@ -109,12 +104,9 @@ Public   Class getxml
 				        ' The person nodes.
 
 				        .WriteStartElement("chktimer")
-				        .WriteString("10000")
+				        .WriteString(Form1.txtchktimer .Text)
 				        .WriteEndElement()
-
-				         
-
-
+            
 				        ' The end of this person.
 				        .WriteEndElement()
 
@@ -125,8 +117,8 @@ Public   Class getxml
 
 			End With
 
-			MessageBox.Show("XML file saved.")
-		End If
+			MessageBox.Show("Config file saved.")
+		 
 
     End Function
 
@@ -135,11 +127,11 @@ Public   Class getxml
     public Shared Function readxml()
 
     'check if file myxml.xml is existing
-		If (IO.File.Exists("o:\MyXML.xml")) Then
+		If (IO.File.Exists( My.Application.Info.DirectoryPath & "\vars.xml")) Then
 
 			'create a new xmltextreader object
 			'this is the object that we will loop and will be used to read the xml file
-			Dim document As XmlReader = New XmlTextReader("o:\MyXML.xml")
+			Dim document As XmlReader = New XmlTextReader( My.Application.Info.DirectoryPath & "\vars.xml")
 
 			'loop through the xml file
 			While (document.Read())
@@ -231,12 +223,10 @@ Public   Class getxml
 
 					End If
 
-
-
-
 				End If
 
 			End While
+            document.Close ()
 
 		Else
 
