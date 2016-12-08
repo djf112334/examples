@@ -75,7 +75,7 @@ Public Class stuff
                Else
                   sw = File.AppendText(strFile)
                End If
-               sw.WriteLine( DateTime.Now & " Err# [" & Err.Number & "].Des --> "  & logtxt & vbCrLf & "------------------------------------------------------------------" )
+               sw.WriteLine( DateTime.Now & " Err# [" & Err.Number & "].Des --> "  & logtxt & vbCrLf & "------------------------------------------------------------------------------------" )
                sw.Close()
             Catch ex As IOException
                MsgBox("Error writing to log file.")

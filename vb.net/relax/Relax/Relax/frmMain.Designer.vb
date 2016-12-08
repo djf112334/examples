@@ -74,6 +74,10 @@ Partial Class Form1
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.richtxtlog = New System.Windows.Forms.RichTextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1.SuspendLayout
         Me.TabControl1.SuspendLayout
         Me.TabPage1.SuspendLayout
@@ -85,6 +89,7 @@ Partial Class Form1
         Me.TabPage3.SuspendLayout
         CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage4.SuspendLayout
         Me.SuspendLayout
         '
         'NotifyIcon1
@@ -139,6 +144,7 @@ Partial Class Form1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178,Byte))
         Me.TabControl1.Location = New System.Drawing.Point(150, 13)
@@ -154,7 +160,7 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 27)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(541, 445)
+        Me.TabPage1.Size = New System.Drawing.Size(541, 452)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Welcome"
         '
@@ -168,7 +174,7 @@ Partial Class Form1
         Me.RichTextBox1.ForeColor = System.Drawing.Color.Chartreuse
         Me.RichTextBox1.Location = New System.Drawing.Point(3, 3)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(535, 439)
+        Me.RichTextBox1.Size = New System.Drawing.Size(535, 446)
         Me.RichTextBox1.TabIndex = 5
         Me.RichTextBox1.TabStop = false
         Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
@@ -574,7 +580,7 @@ Partial Class Form1
         Me.TabPage3.Location = New System.Drawing.Point(4, 27)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(541, 445)
+        Me.TabPage3.Size = New System.Drawing.Size(541, 452)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "About"
         '
@@ -593,7 +599,7 @@ Partial Class Form1
         '
         Me.RichTextBox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.RichTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox2.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.RichTextBox2.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.RichTextBox2.ForeColor = System.Drawing.Color.Red
         Me.RichTextBox2.Location = New System.Drawing.Point(6, 6)
         Me.RichTextBox2.Name = "RichTextBox2"
@@ -611,6 +617,51 @@ Partial Class Form1
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = false
+        '
+        'TabPage4
+        '
+        Me.TabPage4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0,Byte),Integer), CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer))
+        Me.TabPage4.Controls.Add(Me.Label17)
+        Me.TabPage4.Controls.Add(Me.Button1)
+        Me.TabPage4.Controls.Add(Me.richtxtlog)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 27)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(541, 452)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Log viewer"
+        '
+        'richtxtlog
+        '
+        Me.richtxtlog.BackColor = System.Drawing.Color.Black
+        Me.richtxtlog.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.richtxtlog.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.richtxtlog.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer))
+        Me.richtxtlog.Location = New System.Drawing.Point(6, 24)
+        Me.richtxtlog.Name = "richtxtlog"
+        Me.richtxtlog.Size = New System.Drawing.Size(529, 395)
+        Me.richtxtlog.TabIndex = 0
+        Me.richtxtlog.Text = ""
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(431, 423)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(103, 25)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Open Log"
+        Me.Button1.UseVisualStyleBackColor = true
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = true
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178,Byte))
+        Me.Label17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255,Byte),Integer), CType(CType(128,Byte),Integer), CType(CType(128,Byte),Integer))
+        Me.Label17.Location = New System.Drawing.Point(2, 4)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(221, 16)
+        Me.Label17.TabIndex = 9
+        Me.Label17.Text = "Select log file by Date to view :"
         '
         'Form1
         '
@@ -646,6 +697,8 @@ Partial Class Form1
         Me.TabPage3.ResumeLayout(false)
         CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).EndInit
+        Me.TabPage4.ResumeLayout(false)
+        Me.TabPage4.PerformLayout
         Me.ResumeLayout(false)
         Me.PerformLayout
 
@@ -700,4 +753,8 @@ End Sub
     Friend WithEvents lbltime As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Label16 As Label
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents Button1 As Button
+    Friend WithEvents richtxtlog As RichTextBox
+    Friend WithEvents Label17 As Label
 End Class

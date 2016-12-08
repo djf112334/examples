@@ -215,6 +215,28 @@ Dim cmdout As String = cmdProcess.StandardOutput.ReadToEnd
 
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+      
+      '  richtxtlog.LoadFile(projdir &"\logs\"&"ErrorLog_08-Dec-2016.log")
+         Dim openFileDialog1 As New OpenFileDialog()
+        openFileDialog1.InitialDirectory  =  Application.StartupPath & "\logs"
+        openFileDialog1.Filter = "Cursor Files|*.log"
+        openFileDialog1.Title = "Select a log File"
+
+        If openFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+            ' Assign the cursor in the Stream to the Form's Cursor property.
+
+            Dim extension = openFileDialog1.FileName.Substring(openFileDialog1.FileName.LastIndexOf("."))
+            
+              richtxtlog.Text = FileIO.FileSystem.ReadAllText(openFileDialog1.FileName)
+        
+
+        End If
+    End Sub
+    
+
+  
+
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         End
     End Sub
