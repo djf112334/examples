@@ -117,7 +117,7 @@ Public   Class getxml
 
 			End With
 
-			MessageBox.Show("Config file saved.")
+			MsgBox ("Config file saved successfully.",vbInformation ,"Saving configurations")
 		 
 
     End Function

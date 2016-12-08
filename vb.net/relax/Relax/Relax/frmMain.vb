@@ -18,18 +18,14 @@ Public Class Form1
 
 
     Private Sub Main()
-         
+        
+
+
             stuff.getargs  ()
         
       On Error goto errpart
             
-   
-
-
-
-
-
-        ' check needed files tu run relax 
+   ' check needed files tu run relax 
         filechk("vars.xml")
         filechk("extract.exe")
         filechk("LisaCore.dll")
@@ -40,16 +36,7 @@ Public Class Form1
         projdir = My.Application.Info.DirectoryPath & "\"
         mydate = DateTime.Now.ToString("yyyy-MM-dd")
         mytime = DateTime.Now.ToString("HH:mm")
-
-
-        ''  chkini()          'get setting from INI file
-
-
-        Dim pathsubix() As String = IO.Directory.GetFiles(FilePathUbix, "*.ts")
-
-
-        Dim cmdcommand As String
-        Dim OpenCMD
+        lbltime.Text =    DateTime.Now.ToString("HH:mm:ss")                               
 
         if mytime = mytimeend then goto ex
         If mytime = startin1 Or mytime = startin2 Or mytime = startin3 then
@@ -60,13 +47,13 @@ Public Class Form1
 
 
             If chktsclient("ts") = False Then
-
+     
                 My.Computer.FileSystem.CopyDirectory(FilePathUbix, projdir & "ts", showUI:=FileIO.UIOption.AllDialogs)
 
             Else
 
             End If
-
+               Dim pathsubix() As String = IO.Directory.GetFiles(FilePathUbix, "*.ts")
             FileSizeUbix = My.Computer.FileSystem.GetFileInfo(pathsubix(0))            ' ' get TS file size on SERVER  
 
             CreateObject("WScript.Shell").Popup("file size on server = " & FileSizeUbix.Length, 2, "File already exist  ", 64)
@@ -81,12 +68,11 @@ Public Class Form1
 
             end if
 
-            cmdcommand = projdir & FilePathClientOut & mydate & " /ts  " & projdir & FilePathClient
+            
+            doextract ()
 
-            OpenCMD = CreateObject("wscript.shell")
-            OpenCMD.run("cmd /c extract.exe " & cmdcommand)
 
-            Thread.Sleep(chktimer)
+         '''   Thread.Sleep(chktimer)
 
 
             '   Remove folders  ==============================================================================================================
@@ -128,10 +114,35 @@ errpart:
     End Sub
 
 
+    Function doextract ()
+
+          
+        Dim cmdProcess As New Process
+        Dim cmdcommand 
+        
+            cmdcommand = projdir & FilePathClientOut & mydate & " /ts  " & projdir & FilePathClient
+            
+         With cmdProcess
+    .StartInfo = New ProcessStartInfo("cmd.exe", "/c extract.exe " & cmdcommand)
+    With .StartInfo
+        .CreateNoWindow = True
+        .UseShellExecute = False
+        .RedirectStandardOutput = True
+    End With
+    .Start()
+    .WaitForExit()
+End With
+
+' Read output to a string variable.
+Dim cmdout As String = cmdProcess.StandardOutput.ReadToEnd
+        
+      stuff.mylog (cmdout)
+
+  
+    End Function
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ''chkini
 
         chkxml
         ContextMenuStrip1.Enabled = True
@@ -142,8 +153,8 @@ errpart:
         Label2.Text = Application.ProductVersion
         While 1
             Application.DoEvents()
-            me.Refresh
-            Thread.Sleep(300)
+          '  me.Refresh
+            Thread.Sleep(100)
             Main()
         end While
 
@@ -163,10 +174,7 @@ errpart:
         getxml.wrtxml
     Form1_Load (e,e)
 
-
-
-
-    End Sub
+        End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         getxml.readxml
@@ -321,7 +329,7 @@ errpart:
             stuff.mylog("RELAX need some files to runing correctly but  " & projdir & " not found in current dir.Please copy this file to current project dir and run it again.RELAX terminated by now.File not found")
             MsgBox("RELAX need some files to runing correctly but  " & projdir & " not found in current dir.Please copy this file to current application  dir and run it again.RELAX terminated by now.", vbCritical, "Some file corrupted or not found")
            
-
+            end
             
         End If
         projdir = ""
