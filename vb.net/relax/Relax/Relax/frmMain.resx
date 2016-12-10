@@ -1795,6 +1795,7 @@
   </metadata>
   <data name="RichTextBox1.Text" xml:space="preserve">
     <value>Welcome to RELAX Engine.
+
 This program automatically extract recorded TS file on UBIX Server.
 You must first set some parameters in Config file via setting tab to work program
 correctly.For TS files you need recorded file on shared network path.

@@ -76,8 +76,8 @@ Partial Class Form1
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.richtxtlog = New System.Windows.Forms.RichTextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label17 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1.SuspendLayout
         Me.TabControl1.SuspendLayout
         Me.TabPage1.SuspendLayout
@@ -620,9 +620,9 @@ Partial Class Form1
         '
         'TabPage4
         '
-        Me.TabPage4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0,Byte),Integer), CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer))
+        Me.TabPage4.BackColor = System.Drawing.Color.Black
+        Me.TabPage4.Controls.Add(Me.Button2)
         Me.TabPage4.Controls.Add(Me.Label17)
-        Me.TabPage4.Controls.Add(Me.Button1)
         Me.TabPage4.Controls.Add(Me.richtxtlog)
         Me.TabPage4.Location = New System.Drawing.Point(4, 27)
         Me.TabPage4.Name = "TabPage4"
@@ -643,15 +643,6 @@ Partial Class Form1
         Me.richtxtlog.TabIndex = 0
         Me.richtxtlog.Text = ""
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(431, 423)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(103, 25)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Open Log"
-        Me.Button1.UseVisualStyleBackColor = true
-        '
         'Label17
         '
         Me.Label17.AutoSize = true
@@ -662,6 +653,22 @@ Partial Class Form1
         Me.Label17.Size = New System.Drawing.Size(221, 16)
         Me.Label17.TabIndex = 9
         Me.Label17.Text = "Select log file by Date to view :"
+        '
+        'Button2
+        '
+        Me.Button2.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar
+        Me.Button2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer))
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.Yellow
+        Me.Button2.Location = New System.Drawing.Point(421, 422)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(116, 27)
+        Me.Button2.TabIndex = 25
+        Me.Button2.Text = "Open log"
+        Me.Button2.UseVisualStyleBackColor = false
         '
         'Form1
         '
@@ -754,7 +761,7 @@ End Sub
     Friend WithEvents Label14 As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents TabPage4 As TabPage
-    Friend WithEvents Button1 As Button
     Friend WithEvents richtxtlog As RichTextBox
     Friend WithEvents Label17 As Label
+    Friend WithEvents Button2 As Button
 End Class

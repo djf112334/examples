@@ -215,8 +215,12 @@ Dim cmdout As String = cmdProcess.StandardOutput.ReadToEnd
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-      
+    Private Sub Button1_Click(sender As Object, e As EventArgs) 
+     
+    End Sub
+
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+         
       '  richtxtlog.LoadFile(projdir &"\logs\"&"ErrorLog_08-Dec-2016.log")
          Dim openFileDialog1 As New OpenFileDialog()
         openFileDialog1.InitialDirectory  =  Application.StartupPath & "\logs"
@@ -233,9 +237,6 @@ Dim cmdout As String = cmdProcess.StandardOutput.ReadToEnd
 
         End If
     End Sub
-    
-
-  
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         End
